@@ -1,1 +1,47 @@
-/* No CSS *//*# sourceMappingURL=charlist.css.map */
+.char {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.char_name {
+  display: block;
+}
+
+.char_info {
+  display: -ms-grid;
+  display: grid;
+  width: 90%;
+  grid-template: 'classname background player' auto 'race aligment points'  auto/ 30% 30% 30%;
+}
+
+.char_info-classname {
+  grid-area: classname;
+}
+
+.char_info-race {
+  grid-area: race;
+}
+
+.char_info-background {
+  grid-area: background;
+}
+
+.char_info-aligment {
+  grid-area: aligment;
+}
+
+.char_info-player_name {
+  grid-area: player;
+}
+
+.char_info-experience_points {
+  grid-area: points;
+}
+/*# sourceMappingURL=charlist.css.map */

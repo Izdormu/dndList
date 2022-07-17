@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dnd</title>
-    <link rel="stylesheet" href='charlist.scss'>
+    <link rel="stylesheet" href='charlist.css'
     <script src="script.js"></script>
 
 </head>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="char_info">
-            <div class="char_info-className">
+            <div class="char_info-classname">
                 <input type="text">
                 <p class="tag">Клас и уровень</p>
             </div>
@@ -46,48 +46,48 @@
         </div>
     </div>
     <div class="information">
-        <div class="abilities-items">
-            <div class="ability_item">
-                <div class="ability_item-name">Сила</div>
-                <div class="ability_item-stat">
+        <div class="properties-items">
+            <div class="property_item">
+                <div class="property_item-name">Сила</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
-            <div class="ability_item">
-                <div class="ability_item-name">Ловкость</div>
-                <div class="ability_item-stat">
+            <div class="property_item">
+                <div class="property_item-name">Ловкость</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
-            <div class="ability_item">
-                <div class="ability_item-name">Телосложение</div>
-                <div class="ability_item-stat">
+            <div class="property_item">
+                <div class="property_item-name">Телосложение</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
-            <div class="ability_item">
-                <div class="ability_item-name">Интелект</div>
-                <div class="ability_item-stat">
+            <div class="property_item">
+                <div class="property_item-name">Интелект</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
-            <div class="ability_item">
-                <div class="ability_item-name">Мудрость</div>
-                <div class="ability_item-stat">
+            <div class="property_item">
+                <div class="property_item-name">Мудрость</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
-            <div class="ability_item">
-                <div class="ability_item-name">Харизма</div>
-                <div class="ability_item-stat">
+            <div class="property_item">
+                <div class="property_item-name">Харизма</div>
+                <div class="property_item-stat">
                     <input type="text">
                 </div>
-                <div class="ability_item-mod"></div>
+                <div class="property_item-mod"></div>
             </div>
 
         </div>
@@ -256,7 +256,7 @@
             <div class="hit_dice">
                 <label for="">Количество</label>
                 <input type="text">
-                <input type="text">
+                <input type="text"><span>d</span><input type="text">
                 <span>Кость здоровья</span>
 
             </div>
@@ -276,24 +276,32 @@
                 </div>
                 <p class="tag">Броски смерти</p>
             </div>
+            <div class="perception">
+                <input type="text">
+                <p class="tag">Внимательность</p>
+            </div>
+            <div class="vision">
+                <input type="text">
+                <p class="tag">Зрение</p>
+            </div>
 
         </div>
         <div class="about_char">
             <div class="about_char-items">
                 <div class="about_char-item">
-                    <input type="text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                     <p class="tag">Черты характера</p>
                 </div>
                 <div class="about_char-item">
-                    <input type="text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                     <p class="tag">Идеалы</p>
                 </div>
                 <div class="about_char-item">
-                    <input type="text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                     <p class="tag">Привязанности</p>
                 </div>
                 <div class="about_char-item">
-                    <input type="text">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                     <p class="tag">Слабости</p>
                 </div>
             </div>
@@ -315,14 +323,24 @@
                 <input type="text">
             </div>
             <div class="spells">
-                <input type="text">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <p class="tag">Оружие и Заклинания</p>
+            <p class="tag">Атаки и Заклинания</p>
            
             
         </div>
-
-
+    <div class="languages">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <p class="tag">Владения и языки</p>
+    </div>
+    <div class="features_1">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <p class="tag">Умения и особенности</p>
+    </div>
+    <div class="features_2">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <p class="tag">Умения и особенности</p>
+    </div>
 
 
 

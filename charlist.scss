@@ -1,0 +1,40 @@
+.char{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &_name{
+        display: block;
+
+
+
+    }
+    &_info{
+        display: grid;
+        width: 90%;
+        grid-template: 
+        'classname background player' auto
+        'race aligment points'  auto/
+            30% 30% 30%;
+        &-classname{
+            grid-area: classname;
+        }
+        &-race{
+            grid-area: race;
+        }
+        &-background{
+            grid-area: background;
+        }
+        &-aligment{
+            grid-area: aligment;
+        }
+        &-player_name{
+            grid-area: player
+
+        }
+        &-experience_points{
+            grid-area: points;
+
+        }
+
+    }
+}
