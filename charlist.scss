@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .char{
     display:flex;
     justify-content: space-between;
@@ -37,4 +42,85 @@
         }
 
     }
+
+
+}
+.information{
+    display: grid;
+    align-items:flex-start;
+    grid-template: 
+        "main points about" auto
+        "main atks fet2" auto
+        "lang fet1  fet2" auto/
+        300px 300px 300px;
+    &_main{
+        grid-area: main;
+        display: grid;
+        grid-template: 
+            "prop inspiration" auto
+            "prop prof-bonus"  auto
+            "prop throws"      auto
+            "prop skills "      auto/
+            50% 50%;    
+        .properties-items{
+            
+            grid-area:prop;
+                .property_item{
+                    height: 100px;
+                    width: 100px;
+                    text-align: center;
+                    margin-top: 10px;
+                    border: 1px solid black;
+                    input {
+                        border-radius: 10px;
+                        width: 30px;
+                        font-size: 20px;
+                    }
+                    &-mod{
+                        
+                    }
+                    
+
+            }
+        }
+
+        
+        .inspiration{
+            grid-area: inspiration;
+
+        }
+        .proficiency_bonus{
+            grid-area: prof-bonus;
+        }
+        .saving_throws{
+            grid-area:throws;
+            width:150px;
+            input {
+                width: 30px;
+            }
+        }
+        .skills{
+            grid-area: skills;
+        }
+
+    }
+    &_points{
+        grid-area: points;
+    }
+    &_about_char{
+        grid-area: about;
+    }
+    &_attacks_spells{
+        grid-area: atks;
+    }
+    &_languages{
+        grid-area: lang;
+    }
+    &_features_1{
+        grid-area: fet1;
+    }
+    &_features_2{
+        grid-area: fet2;
+    }
+
 }

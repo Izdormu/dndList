@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .char {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,5 +48,84 @@
 
 .char_info-experience_points {
   grid-area: points;
+}
+
+.information {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  grid-template: "main points about" auto "main atks fet2" auto "lang fet1  fet2" auto/ 300px 300px 300px;
+}
+
+.information_main {
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  grid-template: "prop inspiration" auto "prop prof-bonus"  auto "prop throws"      auto "prop skills "      auto/ 50% 50%;
+}
+
+.information_main .properties-items {
+  grid-area: prop;
+}
+
+.information_main .properties-items .property_item {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+.information_main .properties-items .property_item input {
+  border-radius: 10px;
+  width: 30px;
+  font-size: 20px;
+}
+
+.information_main .inspiration {
+  grid-area: inspiration;
+}
+
+.information_main .proficiency_bonus {
+  grid-area: prof-bonus;
+}
+
+.information_main .saving_throws {
+  grid-area: throws;
+  width: 150px;
+}
+
+.information_main .saving_throws input {
+  width: 30px;
+}
+
+.information_main .skills {
+  grid-area: skills;
+}
+
+.information_points {
+  grid-area: points;
+}
+
+.information_about_char {
+  grid-area: about;
+}
+
+.information_attacks_spells {
+  grid-area: atks;
+}
+
+.information_languages {
+  grid-area: lang;
+}
+
+.information_features_1 {
+  grid-area: fet1;
+}
+
+.information_features_2 {
+  grid-area: fet2;
 }
 /*# sourceMappingURL=charlist.css.map */
