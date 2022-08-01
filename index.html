@@ -7,40 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dnd</title>
     <link rel="stylesheet" href='charlist.css'
-    <script src="script.js"></script>
+    
 
 </head>
 
 <body>
     <div class="char">
         <div class="char_name">
-            <input type="text">
+            <input type="text" id="name" name = "charName" >
             <p class="tag">Имя персонажа</p>
         </div>
 
         <div class="char_info">
             <div class="char_info-classname">
-                <input type="text">
+                <div class="classes">
+                    <select id="class" name="class">
+                    <option>Воин</option>
+                    <option>Волшебник</option
+                    </select>
+                <input type="number" name="lvl" id="lvl"></div>
+                
                 <p class="tag">Клас и уровень</p>
             </div>
             <div class="char_info-race">
-                <input type="text">
+                <input type="text" name="race" id="race">
                 <p class="tag">Раса</p>
             </div>
             <div class="char_info-background">
-                <input type="text">
+                <input type="text" name="history" id="history">
                 <p class="tag">Предистория</p>
             </div>
             <div class="char_info-aligment">
-                <input type="text">
+                <input type="text" name="nature" id="nature">
                 <p class="tag">Характер</p>
             </div>
             <div class="char_info-player_name">
-                <input type="text">
+                <input type="text" name="personName" id="person">
                 <p class="tag">Имя игрока</p>
             </div>
             <div class="char_info-experience_points">
-                <input type="text">
+                <input type="text" name="exp" id="exp">
                 <p class="tag">Опыт</p>
             </div>
         </div>
@@ -51,13 +57,15 @@
             <div class="properties-items">
                 <div class="property_item">
                     <div class="property_item-name">Сила</div>
+                    <img src="imgs/strength.png" alt="strength">
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" min="0" max="30">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod">2</div>
                 </div>
                 <div class="property_item">
                     <div class="property_item-name">Ловкость</div>
+                    <img src="imgs/dexterity.png" alt="dexterity">
                     <div class="property_item-stat">
                         <input type="text">
                     </div>
@@ -65,6 +73,7 @@
                 </div>
                 <div class="property_item">
                     <div class="property_item-name">Телосложение</div>
+                    <img src="imgs/constitution.png" alt="constitution">
                     <div class="property_item-stat">
                         <input type="text">
                     </div>
@@ -72,6 +81,7 @@
                 </div>
                 <div class="property_item">
                     <div class="property_item-name">Интелект</div>
+                    <img src="imgs/intellect.png" alt="intellect">
                     <div class="property_item-stat">
                         <input type="text">
                     </div>
@@ -79,6 +89,7 @@
                 </div>
                 <div class="property_item">
                     <div class="property_item-name">Мудрость</div>
+                    <img src="imgs/wisdom.png" alt="">
                     <div class="property_item-stat">
                         <input type="text">
                     </div>
@@ -86,6 +97,7 @@
                 </div>
                 <div class="property_item">
                     <div class="property_item-name">Харизма</div>
+                    <img src="imgs/charisma.png" alt="">
                     <div class="property_item-stat">
                         <input type="text">
                     </div>
@@ -140,95 +152,95 @@
                 <p class="tag">Skills</p>
                 <ol class="skills-items">
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Акробатика</span>
-                        <p>(Лов)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Акробатика</p>
+                        <p class="skill_mod">(Лов)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Aтлетика</span>
-                        <p>(Сил)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Aтлетика</p>
+                        <p class="skill_mod">(Сил)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Внимание</span>
-                        <p>(Мдр)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Внимание</p>
+                        <p class="skill_mod">(Мдр)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Выживание</span>
-                        <p>(Мдр)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Выживание</p>
+                        <p class="skill_mod">(Мдр)</p>
     
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Дрессировка</span>
-                        <p>(Мдр)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Дрессировка</p>
+                        <p class="skill_mod">(Мдр)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Запугивание</span>
-                        <p>(Хар)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Запугивание</p>
+                        <p class="skill_mod">(Хар)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Исполнение</span>
-                        <p>(Хар)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Исполнение</p>
+                        <p class="skill_mod">(Хар)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>История</span>
-                        <p>(Инт)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">История</p>
+                        <p class="skill_mod">(Инт)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Ловкость рук</span>
-                        <p>(Лов)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Ловкость рук</p>
+                        <p class="skill_mod">(Лов)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Магия</span>
-                        <p>(Инт)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Магия</p>
+                        <p class="skill_mod">(Инт)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Медицина</span>
-                        <p>(Муд)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Медицина</p>
+                        <p class="skill_mod">(Муд)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Обман</span>
-                        <p>(Хар)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Обман</p>
+                        <p class="skill_mod">(Хар)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Природа</span>
-                        <p>(Инт)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Природа</p>
+                        <p class="skill_mod">(Инт)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Проницательность</span>
-                        <p>(Мдр)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Проницательность</p>
+                        <p class="skill_mod">(Мдр)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Расследование</span>
-                        <p>(Инт)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Расследование</p>
+                        <p class="skill_mod">(Инт)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Религия</span>
-                        <p>(Инт)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Религия</p>
+                        <p class="skill_mod">(Инт)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Скрытность</span>
-                        <p>(Лов)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Скрытность</p>
+                        <p class="skill_mod">(Лов)</p>
                     </li>
                     <li class="skill-item">
-                        <input type="checkbox" name="" id="">
-                        <span>Убеждение</span>
-                        <p>(Хар)</p>
+                        <input class="skill_input" type="checkbox" name="" id="">
+                        <p class="skill_name">Убеждение</p>
+                        <p class="skill_mod">(Хар)</p>
                     </li>
                 </ol>
             </div>
@@ -353,7 +365,7 @@
 
 
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

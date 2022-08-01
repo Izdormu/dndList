@@ -1,27 +1,64 @@
 *{
     margin: 0;
     padding: 0;
+    
+}
+.tag{
+    text-align: center;
 }
 
 .char{
     display:flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    margin-left: 30px;
+
     &_name{
         display: block;
+        margin-right: 80px;
+
+        input{
+            width: 100%;
+            align-items:center;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid black;
+        }
 
 
 
     }
     &_info{
+
         display: grid;
         width: 90%;
         grid-template: 
         'classname background player' auto
         'race aligment points'  auto/
             30% 30% 30%;
+        gap: 10px;
+        input{
+            width: 100%;
+            align-items:center;
+            text-align: center;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
         &-classname{
-            grid-area: classname;
+            .classes{
+                display: flex;
+                justify-content: space-between;
+            }
+            input{
+                
+                width: 30%;
+                
+            }
+            select{
+                margin-right: 7px;
+                width: 65%;
+            }
         }
         &-race{
             grid-area: race;
@@ -40,20 +77,25 @@
             grid-area: points;
 
         }
-
+       
     }
 
 
 }
 .information{
+    padding: 0px 50px 0px;
+    margin-top: 20px;
     display: grid;
     align-items:flex-start;
     grid-template: 
         "main points about" auto
         "main atks fet2" auto
         "lang fet1  fet2" auto/
-        300px 300px 300px;
+        40% 30% 30%;
+    
     &_main{
+        
+        
         grid-area: main;
         display: grid;
         grid-template: 
@@ -61,23 +103,46 @@
             "prop prof-bonus"  auto
             "prop throws"      auto
             "prop skills "      auto/
-            50% 50%;    
+            30% 70%;    
         .properties-items{
             
             grid-area:prop;
                 .property_item{
+                    display: block;
                     height: 100px;
                     width: 100px;
-                    text-align: center;
-                    margin-top: 10px;
+                    text-align: center;  
+                    margin-top: 30px;
                     border: 1px solid black;
-                    input {
-                        border-radius: 10px;
+                    border-radius: 10px;
+                    z-index: 0;
+                    img{
+                        margin-top: 5px;
                         width: 30px;
+                        height: 30px;
+                    }
+                    
+                    input {
+                        margin-left: 15px;
+                        text-align: center;
+                        border: none;
+                        
+                        width: 40px;
                         font-size: 20px;
                     }
                     &-mod{
-                        
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        text-align: center;
+                        margin-top: 5px;
+                        padding: 5px;
+                        background-color: white;
+                        width: 50px;
+                        height: 20px;
+                        border: 1px solid black;
+                        border-radius: 10px;
+                        z-index: 1;
                     }
                     
 
@@ -86,21 +151,74 @@
 
         
         .inspiration{
+            display: block;
+            width: 150px;
             grid-area: inspiration;
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+                width: 40px;
+                font-size: 20px;
 
-        }
+        }}
         .proficiency_bonus{
+            margin-top: 10px;
+            display: block;
+            width: 150px;
             grid-area: prof-bonus;
-        }
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+            input {
+                border: none;
+                border-bottom: 1px solid black;
+                width: 40px;
+                font-size: 20px;
+        }}
         .saving_throws{
+            padding: 5px;
+            margin-top: 10px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
             grid-area:throws;
-            width:150px;
+            
+            .st-item{
+                list-style-type: none;
+                margin-top : 5px;
+            }
             input {
                 width: 30px;
             }
         }
         .skills{
+            
             grid-area: skills;
+            padding: 5px;
+            margin-top: 10px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+
+            .skill-item{
+                display: flex;
+                justify-content: flex-start;
+                list-style-type: none;
+                width: 300px;
+                margin-top : 5px;
+            }
+            .skill_input{
+                margin-right: 10px;
+            }
+            .skill_name{
+                margin-right: 10px;
+            }
+            .skill_mod{
+                color: rgb(155, 160, 155)
+            }
         }
 
     }
