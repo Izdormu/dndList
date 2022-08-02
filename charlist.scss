@@ -151,7 +151,9 @@
 
         
         .inspiration{
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 150px;
             grid-area: inspiration;
             border: 1px solid black;
@@ -166,7 +168,9 @@
         }}
         .proficiency_bonus{
             margin-top: 10px;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 150px;
             grid-area: prof-bonus;
             border: 1px solid black;

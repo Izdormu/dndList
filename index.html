@@ -6,15 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dnd</title>
-    <link rel="stylesheet" href='charlist.css'
-    
-
-</head>
+    <link rel="stylesheet" href='charlist.css' </head>
 
 <body>
     <div class="char">
         <div class="char_name">
-            <input type="text" id="name" name = "charName" >
+            <input type="text" id="name" name="charName">
             <p class="tag">Имя персонажа</p>
         </div>
 
@@ -22,11 +19,12 @@
             <div class="char_info-classname">
                 <div class="classes">
                     <select id="class" name="class">
-                    <option>Воин</option>
-                    <option>Волшебник</option
-                    </select>
-                <input type="number" name="lvl" id="lvl"></div>
-                
+                        <option></option>
+                        <option>Воин</option>
+                        <option>Волшебник</option </select>
+                        <input type="number" name="lvl" id="lvl">
+                </div>
+
                 <p class="tag">Клас и уровень</p>
             </div>
             <div class="char_info-race">
@@ -42,7 +40,7 @@
                 <p class="tag">Характер</p>
             </div>
             <div class="char_info-player_name">
-                <input type="text" name="personName" id="person">
+                <input type="text" name="personName" id="personName">
                 <p class="tag">Имя игрока</p>
             </div>
             <div class="char_info-experience_points">
@@ -52,66 +50,83 @@
         </div>
     </div>
     <div class="information">
-        
+
         <div class="information_main">
             <div class="properties-items">
                 <div class="property_item">
-                    <div class="property_item-name">Сила</div>
-                    <img src="imgs/strength.png" alt="strength">
+                    <label for="strength">
+                        <div class="property_item-name">Сила</div>
+                        <img src="imgs/strength.png" alt="strength">
+                    </label>
+
                     <div class="property_item-stat">
-                        <input type="number" min="0" max="30">
+                        <input type="number"  oninput="maxLengthCheck(this)" maxLength="2"  id="strength" name="strength">
                     </div>
-                    <div class="property_item-mod">2</div>
+                    <div class="property_item-mod" id="strengthMod"></div>
                 </div>
                 <div class="property_item">
-                    <div class="property_item-name">Ловкость</div>
-                    <img src="imgs/dexterity.png" alt="dexterity">
+                    <label for="dexterity">
+                        <div class="property_item-name">Ловкость</div>
+                        <img src="imgs/dexterity.png" alt="dexterity">
+                    </label>
+
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="dexterity" name="dexterity">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod" id="dexterityMod"></div>
                 </div>
                 <div class="property_item">
-                    <div class="property_item-name">Телосложение</div>
-                    <img src="imgs/constitution.png" alt="constitution">
+                    <label for="constitution">
+                        <div class="property_item-name">Телосложение</div>
+                        <img src="imgs/constitution.png" alt="constitution">
+                    </label>
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="constitution" name="constitution">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod" id="constitutionMod"></div>
                 </div>
                 <div class="property_item">
-                    <div class="property_item-name">Интелект</div>
-                    <img src="imgs/intellect.png" alt="intellect">
+                    <label for="intelligence">
+                        <div class="property_item-name">Интеллект</div>
+                        <img src="imgs/intellect.png" alt="intelligence">
+                    </label>
+
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="intelligence" name="intelligence">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod" id="intelligenceMod"></div>
                 </div>
                 <div class="property_item">
-                    <div class="property_item-name">Мудрость</div>
-                    <img src="imgs/wisdom.png" alt="">
+                    <label for="wisdom">
+                        <div class="property_item-name">Мудрость</div>
+                        <img src="imgs/wisdom.png" alt="wisdom">
+                    </label>
+
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="wisdom" name="wisdom">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod" id="wisdomMod"></div>
                 </div>
                 <div class="property_item">
-                    <div class="property_item-name">Харизма</div>
-                    <img src="imgs/charisma.png" alt="">
+                    <label for="charisma">
+                        <div class="property_item-name">Харизма</div>
+                        <img src="imgs/charisma.png" alt="charisma">
+                    </label>
+
                     <div class="property_item-stat">
-                        <input type="text">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="charisma" name="charisma">
                     </div>
-                    <div class="property_item-mod"></div>
+                    <div class="property_item-mod" id="charismaMod"></div>
                 </div>
-    
+
             </div>
             <div class="inspiration">
-                <input type="text">
-                <p class="tag">Вдохновение</p>
+                <input type="number" id="inspiration" oninput="maxLengthCheck(this)" maxLength="2">
+                <label class="tag" for="inspiration">Вдохновение</label>
             </div>
             <div class="proficiency_bonus">
-                <input type="text">
-                <p class="tag">Бонус мастрества</p>
+                <p class="tag" id="proficiencyBonus">  </p>
+                <label for="bonus" class="tag">Бонус мастрества</label>
             </div>
             <div class="saving_throws">
                 <p class="tag">Спасброски</p>
@@ -170,7 +185,7 @@
                         <input class="skill_input" type="checkbox" name="" id="">
                         <p class="skill_name">Выживание</p>
                         <p class="skill_mod">(Мдр)</p>
-    
+
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="" id="">
@@ -282,7 +297,7 @@
             </div>
             <div class="death_saves">
                 <div class="successes-items">
-    
+
                     <span>Успешные</span>
                     <input type="radio" name="" id="">
                     <input type="radio" name="" id="">
@@ -337,7 +352,7 @@
                 <input type="text">
                 <input type="text">
                 <input type="text">
-                 <label for="">Урон/Вид</label>
+                <label for="">Урон/Вид</label>
                 <input type="text">
                 <input type="text">
                 <input type="text">
@@ -346,21 +361,21 @@
                 <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
             <p class="tag">Атаки и Заклинания</p>
-           
-            
+
+
         </div>
-    <div class="information_languages">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <p class="tag">Владения и языки</p>
-    </div>
-    <div class="information_features_1">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <p class="tag">Умения и особенности</p>
-    </div>
-    <div class="information_features_2">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <p class="tag">Умения и особенности</p>
-    </div>
+        <div class="information_languages">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p class="tag">Владения и языки</p>
+        </div>
+        <div class="information_features_1">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p class="tag">Умения и особенности</p>
+        </div>
+        <div class="information_features_2">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p class="tag">Умения и особенности</p>
+        </div>
 
 
 
