@@ -125,61 +125,73 @@
                 <label class="tag" for="inspiration">Вдохновение</label>
             </div>
             <div class="proficiency_bonus">
-                <p class="tag" id="proficiencyBonus">  </p>
+                <p class="tag" id="proficiencyBonus">2</p>
                 <label for="bonus" class="tag">Бонус мастрества</label>
             </div>
             <div class="saving_throws">
                 <p class="tag">Спасброски</p>
                 <ol class="st-items">
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Сила</span>
+                        <input type="checkbox"  id="strengthCheck" class="st_input" name="strengthThrow">
+                        <p class="st-item_name">Сила</p>
+                        <span class="span"></span>
+                        <p class="st-item_mod" id="strengthSave"></p>
                     </li>
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Ловкость</span>
+                        <input type="checkbox" name="dexterityThrow" id="dexterityCheck" class="st_input">
+                        <p class="st-item_name">Ловкость</p>
+                        <span class="span"></span>
+                        <p class="st-item_mod" id="dexteritySave"></p>
                     </li>
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Телосложение</span>
+                        <input type="checkbox" name="constitutionThrow" id="constitutionCheck" class="st_input">
+                        <p class="st-item_name">Телосложение</p>
+                        <span class="span"></span>
+                        <p  class="st-item_mod" id="constitutionSave"></p>
+
                     </li>
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Интелект</span>
+                        <input type="checkbox" name="intelligenceThrow" id="intelligenceCheck" class="st_input">
+                        <p class="st-item_name">Интелект</p>
+                        <span class="span"></span>
+                        <p class="st-item_mod" id="intelligenceSave"></p>
                     </li>
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Мудрость</span>
+                        <input type="checkbox" name="wisdomThrow" id="wisdomCheck" class="st_input">
+                        <p class="st-item_name">Мудрость</p>
+                        <span class="span"></span>
+                        <p class="st-item_mod" id="wisdomSave"></p>
                     </li>
                     <li class="st-item">
-                        <input type="checkbox" name="" id="">
-                        <input type="text">
-                        <span>Харизма</span>
+                        <input type="checkbox" name="charismaThrow" id="charismaCheck" class="st_input">
+                        <p class="st-item_name">Харизма</p>
+                        <span class="span"></span>
+                        <p class="st-item_mod" id="charismaSave"></p>
                     </li>
                 </ol>
             </div>
             <div class="skills">
-                <p class="tag">Skills</p>
+                <p class="tag">Навыки</p>
                 <ol class="skills-items">
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="" id="">
                         <p class="skill_name">Акробатика</p>
                         <p class="skill_mod">(Лов)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="">0</p>
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="" id="">
                         <p class="skill_name">Aтлетика</p>
                         <p class="skill_mod">(Сил)</p>
+                        <span class="span"></span>
+                        <p class="skill_index">0</p>
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="" id="">
                         <p class="skill_name">Внимание</p>
                         <p class="skill_mod">(Мдр)</p>
+                        
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="" id="">

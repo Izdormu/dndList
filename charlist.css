@@ -172,8 +172,8 @@
 }
 
 .information_main .inspiration input {
+  margin-left: 20px;
   border: none;
-  border-bottom: 1px solid black;
   width: 40px;
   font-size: 20px;
 }
@@ -205,7 +205,7 @@
 }
 
 .information_main .saving_throws {
-  padding: 5px;
+  padding: 10px;
   margin-top: 10px;
   width: 200px;
   border: 1px solid black;
@@ -214,17 +214,32 @@
 }
 
 .information_main .saving_throws .st-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   list-style-type: none;
+  width: 100%;
   margin-top: 5px;
+  list-style-type: none;
 }
 
-.information_main .saving_throws input {
-  width: 30px;
+.information_main .saving_throws .st-item .st_input {
+  margin-right: 10px;
+}
+
+.information_main .saving_throws .st-item .span {
+  margin: 0px 3px;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .information_main .skills {
+  display: block;
   grid-area: skills;
-  padding: 5px;
+  padding: 10px;
   margin-top: 10px;
   width: 200px;
   border: 1px solid black;
@@ -235,12 +250,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   list-style-type: none;
-  width: 300px;
+  width: 100%;
   margin-top: 5px;
+}
+
+.information_main .skills .skill-item .span {
+  margin: 0px 3px;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .information_main .skills .skill_input {

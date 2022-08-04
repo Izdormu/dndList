@@ -7,7 +7,8 @@ const character = {
         personName: '',
         race: '',
         nature: '',
-        exp: ''
+        exp: '',
+        proficiencyBonus: 2,
     },
     abilities: {
         strength: '',
@@ -24,6 +25,14 @@ const character = {
         intelligenceMod: '',
         wisdomMod: '',
         charismaMod: '',
+    },
+    savingThrows: {  
+        strengthThrow: '',
+        dexterityThrow: '',
+        constitutionThrow: '',
+        intelligenceThrow: '',
+        wisdomThrow: '',
+        charismaThrow: '',
     }
 
 
@@ -35,8 +44,8 @@ function maxLengthCheck(object) {
         object.value = object.value.slice(0, object.maxLength)
 } 
 
-const input = document.getElementById('name')
-input.addEventListener("input", updateValue)
+const heroName = document.getElementById('name')
+heroName.addEventListener("input", updateValue)
 
 const select = document.getElementById('class')
 select.addEventListener("change", updateValue)
@@ -70,21 +79,27 @@ function updateValue(e, name) {
 
 const strength = document.getElementById('strength')
 strength.addEventListener("input", updateStats)
+strength.addEventListener("input", updateSavingThrows)
 
 const dexterity = document.getElementById('dexterity')
 dexterity.addEventListener("input", updateStats)
+dexterity.addEventListener("input", updateSavingThrows)
 
 const constitution = document.getElementById('constitution')
 constitution.addEventListener("input", updateStats)
+constitution.addEventListener("input", updateSavingThrows)
 
 const intelligence = document.getElementById('intelligence')
 intelligence.addEventListener("input", updateStats)
+intelligence.addEventListener("input", updateSavingThrows)
 
 const wisdom = document.getElementById('wisdom')
 wisdom.addEventListener("input", updateStats)
+wisdom.addEventListener("input", updateSavingThrows)
 
 const charisma = document.getElementById('charisma')
 charisma.addEventListener("input", updateStats)
+charisma.addEventListener("input", updateSavingThrows)
 
 //update stats in abilities section
 function updateStats(e) {
@@ -101,7 +116,6 @@ function updateStats(e) {
 function calcAbilityModifier(num) {
     return Math.floor((num - 10) / 2)
 }
-
 //update stats in modifiers section
 function writeModifiers() {
     const strengthMod = document.getElementById('strengthMod')
@@ -119,12 +133,7 @@ function writeModifiers() {
 
 }
 
-/*calculate proficiency bonus if lvl 1-4 -> 2
-5-8 -> 3
-9-12 -> 4
-13-16 -> 5
-17-20 -> 6 and write to page*/ 
-
+//calculate proficiency bonus
 function calcProficiencyBonus() {
     const proficiencyBonus = document.getElementById('proficiencyBonus')
     if (character.about.lvl < 5) {
@@ -138,8 +147,64 @@ function calcProficiencyBonus() {
     } else {
         proficiencyBonus.innerHTML = 6
     }
+    character.about.proficiencyBonus = proficiencyBonus.innerHTML
+    console.log(character.about.proficiencyBonus)
 }
 
+//saving throws = modifier 
+function updateSavingThrows(e) {
+    const name = e.target.name
+    character.savingThrows[name + "Throw"] = character.modifiers[name + 'Mod']
+    console.log(character.savingThrows)
+    writeSavingThrows()   
+   
+}
+
+
+//addEventListener to checkbox  
+const strengthCheck = document.getElementById('strengthCheck')
+strengthCheck.addEventListener("change", addProficiencyBonus)
+const dexterityCheck = document.getElementById('dexterityCheck')
+dexterityCheck.addEventListener("change", addProficiencyBonus)
+const constitutionCheck = document.getElementById('constitutionCheck')
+constitutionCheck.addEventListener("change", addProficiencyBonus)
+const intelligenceCheck = document.getElementById('intelligenceCheck')
+intelligenceCheck.addEventListener("change", addProficiencyBonus)
+const wisdomCheck = document.getElementById('wisdomCheck')
+wisdomCheck.addEventListener("change", addProficiencyBonus)
+const charismaCheck = document.getElementById('charismaCheck')
+charismaCheck.addEventListener("change", addProficiencyBonus)
+
+
+//if savingCheck is checked add proficiency bonus to  saving throw
+function addProficiencyBonus(e) {
+   const name = e.target.name
+    if (e.target.checked) {
+        //transform savingThrow to number
+        character.savingThrows[name] = parseInt(character.savingThrows[name]) + parseInt(character.about.proficiencyBonus)
+
+    } else {
+        character.savingThrows[name] -= character.about.proficiencyBonus
+    }
+    console.log(character.savingThrows)
+    writeSavingThrows()
+    
+}
+ //write saving throws to html
+function writeSavingThrows() {
+    const strengthThrow = document.getElementById('strengthSave')
+    strengthThrow.innerHTML = character.savingThrows.strengthThrow
+    const dexterityThrow = document.getElementById('dexteritySave')
+    dexterityThrow.innerHTML = character.savingThrows.dexterityThrow
+    const constitutionThrow = document.getElementById('constitutionSave')
+    constitutionThrow.innerHTML = character.savingThrows.constitutionThrow
+    const intelligenceThrow = document.getElementById('intelligenceSave')
+    intelligenceThrow.innerHTML = character.savingThrows.intelligenceThrow
+    const wisdomThrow = document.getElementById('wisdomSave')
+    wisdomThrow.innerHTML = character.savingThrows.wisdomThrow
+    const charismaThrow = document.getElementById('charismaSave')
+    charismaThrow.innerHTML = character.savingThrows.charismaThrow
+} 
 
 
 

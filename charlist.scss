@@ -160,8 +160,8 @@
             border-radius: 10px;
             text-align: center;
             input {
+                margin-left: 20px;
                 border: none;
-                border-bottom: 1px solid black;
                 width: 40px;
                 font-size: 20px;
 
@@ -183,7 +183,7 @@
                 font-size: 20px;
         }}
         .saving_throws{
-            padding: 5px;
+            padding: 10px;
             margin-top: 10px;
             width: 200px;
             border: 1px solid black;
@@ -191,37 +191,57 @@
             grid-area:throws;
             
             .st-item{
+                display: flex;
+                justify-content: space-between;
                 list-style-type: none;
+                width: 100%;
                 margin-top : 5px;
-            }
-            input {
-                width: 30px;
+                .st_input{
+                    margin-right: 10px;
+                }
+                .span{
+                    margin: 0px 3px;
+                    border-bottom: 1px solid black;
+                    width: 100%;
+                 }
+                list-style-type: none;
+               
             }
         }
         .skills{
-            
+            display: block;
             grid-area: skills;
-            padding: 5px;
+            padding: 10px;
             margin-top: 10px;
             width: 200px;
             border: 1px solid black;
             border-radius: 10px;
-
+           
             .skill-item{
                 display: flex;
-                justify-content: flex-start;
+                justify-content: space-between;
                 list-style-type: none;
-                width: 300px;
+                width: 100%;
                 margin-top : 5px;
+                .span{
+                
+                    margin: 0px 3px;
+                    border-bottom: 1px solid black;
+                    width: 100%;
+                 }
             }
             .skill_input{
                 margin-right: 10px;
+                
             }
             .skill_name{
                 margin-right: 10px;
             }
             .skill_mod{
                 color: rgb(155, 160, 155)
+            }
+            .skill_index{
+                
             }
         }
 
