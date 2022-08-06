@@ -176,12 +176,12 @@
             border: 1px solid black;
             border-radius: 10px;
             text-align: center;
-            input {
-                border: none;
-                border-bottom: 1px solid black;
-                width: 40px;
-                font-size: 20px;
-        }}
+            .bonus_number{
+                margin-top: 5px;
+                
+            }
+            
+        }
         .saving_throws{
             padding: 10px;
             margin-top: 10px;
@@ -213,9 +213,10 @@
             grid-area: skills;
             padding: 10px;
             margin-top: 10px;
-            width: 200px;
+            width: 240px;
             border: 1px solid black;
             border-radius: 10px;
+
            
             .skill-item{
                 display: flex;
@@ -229,13 +230,14 @@
                     border-bottom: 1px solid black;
                     width: 100%;
                  }
-            }
+            
             .skill_input{
                 margin-right: 10px;
                 
             }
             .skill_name{
                 margin-right: 10px;
+                white-space: nowrap;
             }
             .skill_mod{
                 color: rgb(155, 160, 155)
@@ -243,6 +245,7 @@
             .skill_index{
                 
             }
+        }
         }
 
     }

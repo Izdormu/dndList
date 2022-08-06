@@ -32,11 +32,11 @@
                 <p class="tag">Раса</p>
             </div>
             <div class="char_info-background">
-                <input type="text" name="history" id="history">
+                <input type="text" name="charHistory" id="charHistory">
                 <p class="tag">Предистория</p>
             </div>
             <div class="char_info-aligment">
-                <input type="text" name="nature" id="nature">
+                <input type="text" name="charNature" id="charNature">
                 <p class="tag">Характер</p>
             </div>
             <div class="char_info-player_name">
@@ -125,7 +125,7 @@
                 <label class="tag" for="inspiration">Вдохновение</label>
             </div>
             <div class="proficiency_bonus">
-                <p class="tag" id="proficiencyBonus">2</p>
+                <p class="bonus_number" id="proficiencyBonus">2</p>
                 <label for="bonus" class="tag">Бонус мастрества</label>
             </div>
             <div class="saving_throws">
@@ -174,100 +174,136 @@
                 <p class="tag">Навыки</p>
                 <ol class="skills-items">
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="acrobatics" id="acrobaticsCheck">
                         <p class="skill_name">Акробатика</p>
                         <p class="skill_mod">(Лов)</p>
                         <span class="span"></span>
-                        <p class="skill_index" id="">0</p>
+                        <p class="skill_index" name=""  id="acrobaticsMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="athletics" id="athleticsCheck">
                         <p class="skill_name">Aтлетика</p>
                         <p class="skill_mod">(Сил)</p>
                         <span class="span"></span>
-                        <p class="skill_index">0</p>
+                        <p class="skill_index" id="athleticsMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="perception" id="perceptionCheck">
                         <p class="skill_name">Внимание</p>
                         <p class="skill_mod">(Мдр)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="perceptionMod">0</p>
                         
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="survival" id="survivalCheck">
                         <p class="skill_name">Выживание</p>
                         <p class="skill_mod">(Мдр)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="survivalMod">0</p>
 
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="animalHandling" id="animalHandlingCheck">
                         <p class="skill_name">Дрессировка</p>
                         <p class="skill_mod">(Мдр)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="animalHandlingMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="intimidation" id="intimidationCheck">
                         <p class="skill_name">Запугивание</p>
                         <p class="skill_mod">(Хар)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="intimidationMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
-                        <p class="skill_name">Исполнение</p>
+                        <input class="skill_input" type="checkbox" name="performance" id="performanceCheck">
+                        <p class="skill_name">Выступление</p>
                         <p class="skill_mod">(Хар)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="performanceMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="history" id="historyCheck">
                         <p class="skill_name">История</p>
                         <p class="skill_mod">(Инт)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="historyMod">0</p>
+
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="sleightOfHand" id="sleightOfHandCheck">
                         <p class="skill_name">Ловкость рук</p>
                         <p class="skill_mod">(Лов)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="sleightOfHandMod">0</p>
+
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="arcana" id="arcanaCheck">
                         <p class="skill_name">Магия</p>
                         <p class="skill_mod">(Инт)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="arcanaMod">0</p>
+
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="medicine" id="medicineCheck">
                         <p class="skill_name">Медицина</p>
                         <p class="skill_mod">(Муд)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="medicineMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="deception" id="deceptionCheck">
                         <p class="skill_name">Обман</p>
                         <p class="skill_mod">(Хар)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="deceptionMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="perception" id="perceptionCheck">
                         <p class="skill_name">Природа</p>
-                        <p class="skill_mod">(Инт)</p>
+                        <p class="skill_mod">(Инт)</p> 
+                        <span class="span"></span>
+                        <p class="skill_index" id="natureMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="insight" id="insightCheck">
                         <p class="skill_name">Проницательность</p>
                         <p class="skill_mod">(Мдр)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="insightMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="investigation" id="investigationCheck">
                         <p class="skill_name">Расследование</p>
                         <p class="skill_mod">(Инт)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="investigationMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="religion" id="religionCheck">
                         <p class="skill_name">Религия</p>
-                        <p class="skill_mod">(Инт)</p>
+                        <p class="skill_mod">(Инт)</p> 
+                        <span class="span"></span>
+                        <p class="skill_index" id="religionMod">0</p>
+
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="stealth" id="stealthCheck">
                         <p class="skill_name">Скрытность</p>
                         <p class="skill_mod">(Лов)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="stealthMod">0</p>
                     </li>
                     <li class="skill-item">
-                        <input class="skill_input" type="checkbox" name="" id="">
+                        <input class="skill_input" type="checkbox" name="perception" id="persuasionCheck">
                         <p class="skill_name">Убеждение</p>
                         <p class="skill_mod">(Хар)</p>
+                        <span class="span"></span>
+                        <p class="skill_index" id="persuasionMod">0</p>
                     </li>
                 </ol>
             </div>

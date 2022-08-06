@@ -197,11 +197,8 @@
   text-align: center;
 }
 
-.information_main .proficiency_bonus input {
-  border: none;
-  border-bottom: 1px solid black;
-  width: 40px;
-  font-size: 20px;
+.information_main .proficiency_bonus .bonus_number {
+  margin-top: 5px;
 }
 
 .information_main .saving_throws {
@@ -241,7 +238,7 @@
   grid-area: skills;
   padding: 10px;
   margin-top: 10px;
-  width: 200px;
+  width: 240px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -264,15 +261,16 @@
   width: 100%;
 }
 
-.information_main .skills .skill_input {
+.information_main .skills .skill-item .skill_input {
   margin-right: 10px;
 }
 
-.information_main .skills .skill_name {
+.information_main .skills .skill-item .skill_name {
   margin-right: 10px;
+  white-space: nowrap;
 }
 
-.information_main .skills .skill_mod {
+.information_main .skills .skill-item .skill_mod {
   color: #9ba09b;
 }
 
