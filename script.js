@@ -27,32 +27,32 @@ const character = {
         charismaMod: '',
     },
     savingThrows: {
-        strengthThrow: '',
-        dexterityThrow: '',
-        constitutionThrow: '',
-        intelligenceThrow: '',
-        wisdomThrow: '',
-        charismaThrow: '',
+        strengthThrow: '0',
+        dexterityThrow: '0',
+        constitutionThrow: '0',
+        intelligenceThrow: '0',
+        wisdomThrow: '0',
+        charismaThrow: '0',
     },
     skills: {
-        acrobatics: { mod: '', modifier: 'dexterityMod' },
-        animalHandling: { mod: '', modifier: 'wisdomMod' },
-        arcana: { mod: '', modifier: 'intelligenceMod' },
-        athletics: { mod: '', modifier: 'strengthMod' },
-        deception: { mod: '', modifier: 'charismaMod' },
-        history: { mod: '', modifier: 'intelligenceMod' },
-        insight: { mod: '', modifier: 'wisdomMod' },
-        intimidation: { mod: '', modifier: 'charismaMod' },
-        investigation: { mod: '', modifier: 'intelligenceMod' },
-        medicine: { mod: '', modifier: 'wisdomMod' },
-        nature: { mod: '', modifier: 'intelligenceMod' },
-        perception: { mod: '', modifier: 'wisdomMod' },
-        performance: { mod: '', modifier: 'charismaMod' },
-        persuasion: { mod: '', modifier: 'charismaMod' },
-        religion: { mod: '', modifier: 'intelligenceMod' },
-        sleightOfHand: { mod: '', modifier: 'dexterityMod' },
-        stealth: { mod: '', modifier: 'dexterityMod' },
-        survival: { mod: '', modifier: 'wisdomMod' },
+        acrobatics: { mod: '0', modifier: 'dexterityMod' },
+        animalHandling: { mod: '0', modifier: 'wisdomMod' },
+        arcana: { mod: '0', modifier: 'intelligenceMod' },
+        athletics: { mod: '0', modifier: 'strengthMod' },
+        deception: { mod: '0', modifier: 'charismaMod' },
+        history: { mod: '0', modifier: 'intelligenceMod' },
+        insight: { mod: '0', modifier: 'wisdomMod' },
+        intimidation: { mod: '0', modifier: 'charismaMod' },
+        investigation: { mod: '0', modifier: 'intelligenceMod' },
+        medicine: { mod: '0', modifier: 'wisdomMod' },
+        nature: { mod: '0', modifier: 'intelligenceMod' },
+        perception: { mod: '0', modifier: 'wisdomMod' },
+        performance: { mod: '0', modifier: 'charismaMod' },
+        persuasion: { mod: '0', modifier: 'charismaMod' },
+        religion: { mod: '0', modifier: 'intelligenceMod' },
+        sleightOfHand: { mod: '0', modifier: 'dexterityMod' },
+        stealth: { mod: '0', modifier: 'dexterityMod' },
+        survival: { mod: '0', modifier: 'wisdomMod' },
         
 
        
@@ -134,7 +134,6 @@ function updateAbility(e) {
         character.modifiers[name + 'Mod'] = ''
     }
     writeModifiers()
-    updateSavingThrows()
     updateSkills()
     
     
@@ -186,8 +185,12 @@ function calcProficiencyBonus() {
 function updateSavingThrows(e) {
     const name = e.target.name
     character.savingThrows[name + "Throw"] = character.modifiers[name + 'Mod']
-    console.log(character.savingThrows)
+   
     writeSavingThrows()
+
+
+    console.log(character.savingThrows)
+    
 
 }
 
@@ -249,7 +252,7 @@ function updateSkills() {
             if (character.skills[skill].modifier === modifier) {
                 character.skills[skill].mod = character.modifiers[modifier]
             }
-            
+           
             
         }   
     }
@@ -263,6 +266,11 @@ function updateSkills() {
 
 //write skills to hltm Mod
 function writeSkills() {
+    for (let skill in character.skills) {
+        if (character.skills[skill].mod === '' ) {
+            character.skills[skill].mod = '0'
+        }
+    }
     const athletics = document.getElementById('athleticsMod')
     athletics.innerHTML = character.skills.athletics.mod
     const stealth = document.getElementById('stealthMod')
@@ -300,7 +308,65 @@ function writeSkills() {
     const sleightOfHand = document.getElementById('sleightOfHandMod')
     sleightOfHand.innerHTML = character.skills.sleightOfHand.mod
     
+    //if mod = '' => write mod = 0 
+    
+
+
+
+    
 }
+
+//if skill is checked add proficiency bonus to skill
+function addProficiencyBonusToSkills(e) {
+    const name = e.target.name
+    if (e.target.checked) {
+        character.skills[name].mod = parseInt(character.skills[name].mod) + parseInt(character.about.proficiencyBonus)
+    } else {
+        character.skills[name].mod -= character.about.proficiencyBonus
+    }
+    console.log(character.skills)
+    writeSkills()
+}
+
+//add eventListener to checkbox in skills section
+const athleticsCheck = document.getElementById('athleticsCheck')
+athleticsCheck.addEventListener("change", addProficiencyBonusToSkills)
+const stealthCheck = document.getElementById('stealthCheck')
+stealthCheck.addEventListener("change", addProficiencyBonusToSkills)
+const survivalCheck = document.getElementById('survivalCheck')
+survivalCheck.addEventListener("change", addProficiencyBonusToSkills)
+const acrobaticsCheck = document.getElementById('acrobaticsCheck')
+acrobaticsCheck.addEventListener("change", addProficiencyBonusToSkills)
+const animalHandlingCheck = document.getElementById('animalHandlingCheck')
+animalHandlingCheck.addEventListener("change", addProficiencyBonusToSkills)
+const arcanaCheck = document.getElementById('arcanaCheck')
+arcanaCheck.addEventListener("change", addProficiencyBonusToSkills)
+const deceptionCheck = document.getElementById('deceptionCheck')
+deceptionCheck.addEventListener("change", addProficiencyBonusToSkills)
+const historyCheck = document.getElementById('historyCheck')
+historyCheck.addEventListener("change", addProficiencyBonusToSkills)
+const insightCheck = document.getElementById('insightCheck')
+insightCheck.addEventListener("change", addProficiencyBonusToSkills)
+const intimidationCheck = document.getElementById('intimidationCheck')
+intimidationCheck.addEventListener("change", addProficiencyBonusToSkills)
+const investigationCheck = document.getElementById('investigationCheck')
+investigationCheck.addEventListener("change", addProficiencyBonusToSkills)
+const medicineCheck = document.getElementById('medicineCheck')
+medicineCheck.addEventListener("change", addProficiencyBonusToSkills)
+const natureCheck = document.getElementById('natureCheck')
+natureCheck.addEventListener("change", addProficiencyBonusToSkills)
+const perceptionCheck = document.getElementById('perceptionCheck') 
+perceptionCheck.addEventListener("change", addProficiencyBonusToSkills)
+const performanceCheck = document.getElementById('performanceCheck')
+performanceCheck.addEventListener("change", addProficiencyBonusToSkills)
+const persuasionCheck = document.getElementById('persuasionCheck') 
+persuasionCheck.addEventListener("change", addProficiencyBonusToSkills)
+const religionCheck = document.getElementById('religionCheck')
+religionCheck.addEventListener("change", addProficiencyBonusToSkills)
+const sleightOfHandCheck = document.getElementById('sleightOfHandCheck')
+sleightOfHandCheck.addEventListener("change", addProficiencyBonusToSkills)
+
+
 
 
 
