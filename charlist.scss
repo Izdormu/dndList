@@ -87,6 +87,7 @@
     margin-top: 20px;
     display: grid;
     align-items:flex-start;
+    grid-gap: 30px;
     grid-template: 
         "main points about" auto
         "main atks fet2" auto
@@ -98,21 +99,26 @@
         
         grid-area: main;
         display: grid;
+        column-gap: 20px;
         grid-template: 
             "prop inspiration" auto
             "prop prof-bonus"  auto
             "prop throws"      auto
             "prop skills "      auto/
-            30% 70%;    
+            25% auto;    
+        min-width: 300px;
         .properties-items{
-            
+            min-width: 110px;
             grid-area:prop;
                 .property_item{
                     display: block;
                     height: 100px;
-                    width: 100px;
+                    
                     text-align: center;  
                     margin-top: 30px;
+                    &:first-child{
+                        margin-top: 0px;
+                    }
                     border: 1px solid black;
                     border-radius: 10px;
                     z-index: 0;
@@ -154,7 +160,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 150px;
+            width: 100%;
             grid-area: inspiration;
             border: 1px solid black;
             border-radius: 10px;
@@ -171,7 +177,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 150px;
+            width: 100%;
             grid-area: prof-bonus;
             border: 1px solid black;
             border-radius: 10px;
@@ -183,19 +189,28 @@
             
         }
         .saving_throws{
-            padding: 10px;
+            display: block;
             margin-top: 10px;
-            width: 200px;
+            width: 100%;
             border: 1px solid black;
             border-radius: 10px;
             grid-area:throws;
+             ;
             
+            .tag {
+                margin-top: 10px;
+            }
             .st-item{
+                
                 display: flex;
                 justify-content: space-between;
                 list-style-type: none;
-                width: 100%;
+                padding: 0 10px;
+                width: auto;
                 margin-top : 5px;
+                &:last-child{
+                    margin-bottom: 10px;
+                }
                 .st_input{
                     margin-right: 10px;
                 }
@@ -211,9 +226,8 @@
         .skills{
             display: block;
             grid-area: skills;
-            padding: 10px;
             margin-top: 10px;
-            width: 240px;
+            width: 100%;
             border: 1px solid black;
             border-radius: 10px;
 
@@ -222,8 +236,12 @@
                 display: flex;
                 justify-content: space-between;
                 list-style-type: none;
-                width: 100%;
+                padding: 0 10px;
+                width: auto;
                 margin-top : 5px;
+                &:last-child{
+                    margin-bottom: 10px;
+                }
                 .span{
                 
                     margin: 0px 3px;
@@ -251,6 +269,24 @@
     }
     &_points{
         grid-area: points;
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align: center;
+        input {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .armor_class{
+            margin-top: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 30%;
+            input{
+                width:60%;
+                align-items:center;
+                text-align: center;
+            }
+        }
     }
     &_about_char{
         grid-area: about;
