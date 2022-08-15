@@ -12,7 +12,7 @@
     <div class="char">
         <div class="char_name">
             <input type="text" id="name" name="charName">
-            <p class="tag">Имя персонажа</p>
+            <p class="name_bar">Имя персонажа</p>
         </div>
 
         <div class="char_info">
@@ -25,27 +25,27 @@
                         <input type="number" name="lvl" id="lvl">
                 </div>
 
-                <p class="tag">Клас и уровень</p>
+                <p class="name_bar">Клас и уровень</p>
             </div>
             <div class="char_info-race">
                 <input type="text" name="race" id="race">
-                <p class="tag">Раса</p>
+                <p class="name_bar">Раса</p>
             </div>
             <div class="char_info-background">
                 <input type="text" name="charHistory" id="charHistory">
-                <p class="tag">Предистория</p>
+                <p class="name_bar">Предистория</p>
             </div>
             <div class="char_info-aligment">
                 <input type="text" name="charNature" id="charNature">
-                <p class="tag">Характер</p>
+                <p class="name_bar">Характер</p>
             </div>
             <div class="char_info-player_name">
                 <input type="text" name="personName" id="personName">
-                <p class="tag">Имя игрока</p>
+                <p class="name_bar">Имя игрока</p>
             </div>
             <div class="char_info-experience_points">
                 <input type="text" name="exp" id="exp">
-                <p class="tag">Опыт</p>
+                <p class="name_bar">Опыт</p>
             </div>
         </div>
     </div>
@@ -122,14 +122,14 @@
             </div>
             <div class="inspiration">
                 <input type="number" id="inspiration" oninput="maxLengthCheck(this)" maxLength="2">
-                <label class="tag" for="inspiration">Вдохновение</label>
+                <label class="name_bar" for="inspiration">Вдохновение</label>
             </div>
             <div class="proficiency_bonus">
                 <p class="bonus_number" id="proficiencyBonus">2</p>
-                <label for="bonus" class="tag">Бонус мастрества</label>
+                <label for="bonus" class="name_bar">Бонус мастрества</label>
             </div>
             <div class="saving_throws">
-                <p class="tag">Спасброски</p>
+                <p class="name_bar">Спасброски</p>
                 <ol class="st-items">
                     <li class="st-item">
                         <input type="checkbox"  id="strengthCheck" class="st_input" name="strengthThrow">
@@ -171,7 +171,7 @@
                 </ol>
             </div>
             <div class="skills">
-                <p class="tag">Навыки</p>
+                <p class="name_bar">Навыки</p>
                 <ol class="skills-items">
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="acrobatics" id="acrobaticsCheck">
@@ -311,36 +311,36 @@
         <div class="information_points">
             <div class="armor_class">
                 <input type="number">
-                <p class="tag">Класс доспеха</p>
+                <p class="name_bar">Класс доспеха</p>
 
             </div>
             <div class="initiative">
-                <input type="text">
-                <p class="tag">Инициатива</p>
+                <input type="number">
+                <p class="name_bar">Инициатива</p>
 
             </div>
             <div class="speed">
-                <input type="text">
-                <p class="tag">Скорость</p>
+                <input type="number">
+                <p class="name_bar">Скорость</p>
 
             </div>
-            <div class="current_points">
-                <label for="">Максимальное здоровье</label>
-                <input type="text">
-                <input type="text">
-                <p class="tag">Здоровье</p>
+            <div class="current_health">
+                <label class="name_bar" for="maxHealth">Максимальное здоровье</label>
+                <input type="number" id="maxHealth">
+                <input type="number" id="currHealth">
+                <label class="name_bar" for="currHealth">Здоровье</p>
 
             </div>
-            <div class="temporary_points">
-                <input type="text">
-                <p class="tag">Временное здоровье</p>
+            <div class="temporary_heaths">
+                <input type="number" id="tempHealth">
+                <label class="name_bar" for="tempHealth">Временное здоровье</p>
 
             </div>
             <div class="hit_dice">
-                <label for="">Количество</label>
-                <input type="text">
-                <input type="text"><span>d</span><input type="text">
-                <span>Кость здоровья</span>
+                <label  for="diceCount">Количество</label>
+                <input type="number" max="10" id="diceCount">
+                <input type="number" id="diceNumber"><span> d </span><input type="number" id="diceNumber">
+                <p class="name_bar">Кость здоровья</span>
 
             </div>
             <div class="death_saves">
@@ -357,72 +357,77 @@
                     <input type="radio" name="" id="">
                     <input type="radio" name="" id="">
                 </div>
-                <p class="tag">Броски смерти</p>
+                <p class="name_bar">Броски смерти</p>
             </div>
             <div class="perception">
                 <input type="text">
-                <p class="tag">Внимательность</p>
+                <p class="name_bar">Внимательность</p>
             </div>
             <div class="vision">
                 <input type="text">
-                <p class="tag">Зрение</p>
+                <p class="name_bar">Зрение</p>
             </div>
 
         </div>
         <div class="information_about_char">
             <div class="about_char-items">
                 <div class="about_char-item">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <p class="tag">Черты характера</p>
+                    <textarea   name="" id="" cols="40" rows="6"></textarea>
+                    <p class="name_bar">Черты характера</p>
                 </div>
                 <div class="about_char-item">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <p class="tag">Идеалы</p>
+                    <textarea name="" id="" cols="40" rows="6"></textarea>
+                    <p class="name_bar">Идеалы</p>
                 </div>
                 <div class="about_char-item">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <p class="tag">Привязанности</p>
+                    <textarea name="" id="" cols="40" rows="6"></textarea>
+                    <p class="name_bar">Привязанности</p>
                 </div>
                 <div class="about_char-item">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <p class="tag">Слабости</p>
+                    <textarea name="" id="" cols="30" rows="6"></textarea>
+                    <p class="name_bar">Слабости</p>
                 </div>
             </div>
         </div>
 
         <div class="information_attacks_spells">
             <div class="attacks">
-                <label for="">Имя</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <label for="">Бонус атаки</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <label for="">Урон/Вид</label>
-                <input type="text">
-                <input type="text">
-                <input type="text">
+                <div class="attacks_names">
+                    <label class="attacks_name" for="">Имя</label>
+                <input  class="attacks_name" type="text">
+                <input class="attacks_name" type="text">
+                <input class="attacks_name" type="text">
+                </div>
+                <div class="attacks_bonuses">
+                     <label class="attacks_bonuses" for="">Бонус атаки</label>
+                    <input class="attacks_bonus" type="text">
+                    <input class="attacks_bonus" type="text">
+                    <input class="attacks_bonus" type="text"></div>
+               <div class="attacks_damage">
+                <label class="attacks_damage"   for="">Урон/Вид</label>          
+                <input class="attack_damage" type="text">
+                <input class="attack_damage" type="text">
+                <input class="attack_damage" type="text"></div>
+                
             </div>
             <div class="spells">
                 <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <p class="tag">Атаки и Заклинания</p>
+            <p class="name_bar">Атаки и Заклинания</p>
 
 
         </div>
         <div class="information_languages">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p class="tag">Владения и языки</p>
+            <textarea name="" id="" cols="30" rows="12"></textarea>
+            <p class="name_bar">Владения и языки</p>
         </div>
         <div class="information_features_1">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p class="tag">Умения и особенности</p>
+            <textarea name="" id="" cols="30" rows="32"></textarea>
+            <p class="name_bar">Умения и особенности</p>
         </div>
         <div class="information_features_2">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p class="tag">Умения и особенности</p>
+            <textarea name="" id="" cols="40" rows="32"></textarea>
+            <p class="name_bar">Умения и особенности</p>
         </div>
 
 

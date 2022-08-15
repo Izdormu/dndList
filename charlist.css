@@ -3,7 +3,20 @@
   padding: 0;
 }
 
-.tag {
+.name_bar {
+  text-align: center;
+  font-size: 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  font-size: 20px;
+  list-style: 5px;
+}
+
+input {
+  font-size: 20px;
   text-align: center;
 }
 
@@ -18,6 +31,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-left: 30px;
+  padding: 0px 50px;
 }
 
 .char_name {
@@ -36,11 +50,15 @@
 }
 
 .char_info {
+  padding: 0 50px;
   display: -ms-grid;
   display: grid;
   width: 90%;
-  grid-template: 'classname background player' auto 'race aligment points'  auto/ 30% 30% 30%;
+  grid-template: "classname background player" auto "race aligment points" auto/ 30% 30% 30%;
   gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .char_info input {
@@ -92,7 +110,6 @@
 }
 
 .information {
-  padding: 0px 50px 0px;
   margin-top: 20px;
   display: -ms-grid;
   display: grid;
@@ -100,7 +117,11 @@
       -ms-flex-align: start;
           align-items: flex-start;
   grid-gap: 30px;
-  grid-template: "main points about" auto "main atks fet2" auto "lang fet1  fet2" auto/ 40% 30% 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template: "main points about" auto "atks fet1 fet2" auto "lang fet1  fet2" auto/ 30% 20% 20%;
+  padding: 0 50px;
 }
 
 .information_main {
@@ -109,11 +130,12 @@
   display: grid;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  grid-template: "prop inspiration" auto "prop prof-bonus"  auto "prop throws"      auto "prop skills "      auto/ 25% auto;
+  grid-template: "prop inspiration" auto "prop prof-bonus" auto "prop throws" auto "prop skills " auto/ 25% auto;
   min-width: 300px;
 }
 
 .information_main .properties-items {
+  display: block;
   min-width: 110px;
   grid-area: prop;
 }
@@ -199,6 +221,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  min-width: 240px;
   grid-area: prof-bonus;
   border: 1px solid black;
   border-radius: 10px;
@@ -213,12 +236,13 @@
   display: block;
   margin-top: 10px;
   width: 100%;
+  min-width: 240px;
   border: 1px solid black;
   border-radius: 10px;
   grid-area: throws;
 }
 
-.information_main .saving_throws .tag {
+.information_main .saving_throws .name_bar {
   margin-top: 10px;
 }
 
@@ -255,6 +279,7 @@
   grid-area: skills;
   margin-top: 10px;
   width: 100%;
+  min-width: 240px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -296,10 +321,28 @@
 }
 
 .information_points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 0;
   grid-area: points;
   border: 1px solid black;
   border-radius: 10px;
   text-align: center;
+  width: 100%;
+  min-width: 250px;
+  height: 740px;
 }
 
 .information_points input {
@@ -322,16 +365,242 @@
   text-align: center;
 }
 
+.information_points .initiative {
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30%;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.information_points .initiative input {
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .speed {
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.information_points .speed input {
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .current_health {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 90%;
+  padding: 5px 0;
+}
+
+.information_points .current_health input {
+  margin: 5px 0;
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .temporary_heaths {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 90%;
+  padding: 5px 0;
+}
+
+.information_points .temporary_heaths input {
+  margin: 5px 0;
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .hit_dice {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 90%;
+  padding: 5px 0;
+}
+
+.information_points .hit_dice label {
+  display: block;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.information_points .hit_dice input {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .hit_dice #diceCount {
+  display: block;
+  width: 30%;
+  margin: auto;
+}
+
+.information_points .hit_dice #diceNumber {
+  width: 30px;
+}
+
+.information_points .hit_dice .name_bar {
+  margin: 5px 0;
+}
+
+.information_points .death_saves {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 90%;
+  padding: 5px 0;
+}
+
+.information_points .death_saves .name_bar {
+  margin-top: 5px;
+}
+
+.information_points .perception {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.information_points .perception input {
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .perception .name_bar {
+  word-wrap: break-word;
+  margin-top: 5px;
+}
+
+.information_points .vision {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.information_points .vision input {
+  width: 60%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.information_points .vision .name_bar {
+  margin-top: 5px;
+}
+
 .information_about_char {
+  margin-top: 25px;
   grid-area: about;
+}
+
+.information_about_char .name_bar {
+  margin-bottom: 15px;
 }
 
 .information_attacks_spells {
   grid-area: atks;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: auto;
+}
+
+.information_attacks_spells .attacks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.information_attacks_spells .attacks input {
+  width: 90%;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.information_attacks_spells .attacks label {
+  margin-left: 5px;
 }
 
 .information_languages {
   grid-area: lang;
+}
+
+.information_languages textarea {
+  height: 285px;
 }
 
 .information_features_1 {
