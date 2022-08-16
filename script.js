@@ -35,37 +35,33 @@ const character = {
         charismaThrow: '0',
     },
     skills: {
-        acrobatics: { mod: '0', modifier: 'dexterityMod' },
-        animalHandling: { mod: '0', modifier: 'wisdomMod' },
-        arcana: { mod: '0', modifier: 'intelligenceMod' },
-        athletics: { mod: '0', modifier: 'strengthMod' },
-        deception: { mod: '0', modifier: 'charismaMod' },
-        history: { mod: '0', modifier: 'intelligenceMod' },
-        insight: { mod: '0', modifier: 'wisdomMod' },
-        intimidation: { mod: '0', modifier: 'charismaMod' },
-        investigation: { mod: '0', modifier: 'intelligenceMod' },
-        medicine: { mod: '0', modifier: 'wisdomMod' },
-        nature: { mod: '0', modifier: 'intelligenceMod' },
-        perception: { mod: '0', modifier: 'wisdomMod' },
-        performance: { mod: '0', modifier: 'charismaMod' },
-        persuasion: { mod: '0', modifier: 'charismaMod' },
-        religion: { mod: '0', modifier: 'intelligenceMod' },
-        sleightOfHand: { mod: '0', modifier: 'dexterityMod' },
-        stealth: { mod: '0', modifier: 'dexterityMod' },
-        survival: { mod: '0', modifier: 'wisdomMod' },
-        
-
-       
-
+        acrobatics: {mod: '0', modifier: 'dexterityMod'},
+        animalHandling: {mod: '0', modifier: 'wisdomMod'},
+        arcana: {mod: '0', modifier: 'intelligenceMod'},
+        athletics: {mod: '0', modifier: 'strengthMod'},
+        deception: {mod: '0', modifier: 'charismaMod'},
+        history: {mod: '0', modifier: 'intelligenceMod'},
+        insight: {mod: '0', modifier: 'wisdomMod'},
+        intimidation: {mod: '0', modifier: 'charismaMod'},
+        investigation: {mod: '0', modifier: 'intelligenceMod'},
+        medicine: {mod: '0', modifier: 'wisdomMod'},
+        nature: {mod: '0', modifier: 'intelligenceMod'},
+        perception: {mod: '0', modifier: 'wisdomMod'},
+        performance: {mod: '0', modifier: 'charismaMod'},
+        persuasion: {mod: '0', modifier: 'charismaMod'},
+        religion: {mod: '0', modifier: 'intelligenceMod'},
+        sleightOfHand: {mod: '0', modifier: 'dexterityMod'},
+        stealth: {mod: '0', modifier: 'dexterityMod'},
+        survival: {mod: '0', modifier: 'wisdomMod'},
     },
-
 }
 
 
 // maxlengtn for input type number
 function maxLengthCheck(object) {
-    if (object.value.length > object.maxLength)
+    if (object.value.length > object.maxLength) {
         object.value = object.value.slice(0, object.maxLength)
+    }
 }
 
 const heroName = document.getElementById('name')
@@ -98,8 +94,8 @@ function updateValue(e, name) {
     name = e.target.name
     character.about[name] = e.target.value
     console.log(character.about)
-
 }
+
 //update ability in abilities section
 const strength = document.getElementById('strength')
 strength.addEventListener("input", updateAbility)
@@ -135,17 +131,15 @@ function updateAbility(e) {
     }
     writeModifiers()
     updateSkills()
-    
-    
-
-
 
     console.log(character)
 }
+
 //calculate ability modifier
 function calcAbilityModifier(num) {
     return Math.floor((num - 10) / 2)
 }
+
 //update stats in modifiers section
 function writeModifiers() {
     const strengthMod = document.getElementById('strengthMod')
@@ -160,12 +154,12 @@ function writeModifiers() {
     wisdomMod.innerHTML = character.modifiers.wisdomMod
     const charismaMod = document.getElementById('charismaMod')
     charismaMod.innerHTML = character.modifiers.charismaMod
-
 }
 
 //calculate proficiency bonus
 function calcProficiencyBonus() {
     const proficiencyBonus = document.getElementById('proficiencyBonus')
+    //TODO якщо маєш якісь дані як константу, то краще перенести їх до змінної
     if (character.about.lvl < 5) {
         proficiencyBonus.innerHTML = 2
     } else if (character.about.lvl < 9) {
@@ -185,13 +179,10 @@ function calcProficiencyBonus() {
 function updateSavingThrows(e) {
     const name = e.target.name
     character.savingThrows[name + "Throw"] = character.modifiers[name + 'Mod']
-   
+
     writeSavingThrows()
 
-
     console.log(character.savingThrows)
-    
-
 }
 
 
@@ -216,17 +207,13 @@ function addProficiencyBonus(e) {
     if (e.target.checked) {
         //transform savingThrow to number
         character.savingThrows[name] = parseInt(character.savingThrows[name]) + parseInt(character.about.proficiencyBonus)
-
-
     } else {
         character.savingThrows[name] -= character.about.proficiencyBonus
-
     }
     console.log(character.savingThrows)
     writeSavingThrows()
-
-
 }
+
 //update saving throws to html
 function writeSavingThrows() {
     const strengthThrow = document.getElementById('strengthSave')
@@ -245,29 +232,23 @@ function writeSavingThrows() {
 
 
 function updateSkills() {
-    
     //if skill.acrobatics.modifier name = modifiers name => skill.acrobatics.mod = modifiers.name 
     for (let skill in character.skills) {
         for (let modifier in character.modifiers) {
             if (character.skills[skill].modifier === modifier) {
                 character.skills[skill].mod = character.modifiers[modifier]
             }
-           
-            
-        }   
+        }
     }
     console.log(character.skills)
     writeSkills()
-    
 }
-
-
 
 
 //write skills to hltm Mod
 function writeSkills() {
     for (let skill in character.skills) {
-        if (character.skills[skill].mod === '' ) {
+        if (character.skills[skill].mod === '') {
             character.skills[skill].mod = '0'
         }
     }
@@ -275,7 +256,7 @@ function writeSkills() {
     athletics.innerHTML = character.skills.athletics.mod
     const stealth = document.getElementById('stealthMod')
     stealth.innerHTML = character.skills.stealth.mod
-    survival = document.getElementById('survivalMod')
+    const survival = document.getElementById('survivalMod')
     survival.innerHTML = character.skills.survival.mod
     const acrobatics = document.getElementById('acrobaticsMod')
     acrobatics.innerHTML = character.skills.acrobatics.mod
@@ -307,13 +288,7 @@ function writeSkills() {
     religion.innerHTML = character.skills.religion.mod
     const sleightOfHand = document.getElementById('sleightOfHandMod')
     sleightOfHand.innerHTML = character.skills.sleightOfHand.mod
-    
-    //if mod = '' => write mod = 0 
-    
-
-
-
-    
+    //if mod = '' => write mod = 0
 }
 
 //if skill is checked add proficiency bonus to skill
@@ -355,11 +330,11 @@ const medicineCheck = document.getElementById('medicineCheck')
 medicineCheck.addEventListener("change", addProficiencyBonusToSkills)
 const natureCheck = document.getElementById('natureCheck')
 natureCheck.addEventListener("change", addProficiencyBonusToSkills)
-const perceptionCheck = document.getElementById('perceptionCheck') 
+const perceptionCheck = document.getElementById('perceptionCheck')
 perceptionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const performanceCheck = document.getElementById('performanceCheck')
 performanceCheck.addEventListener("change", addProficiencyBonusToSkills)
-const persuasionCheck = document.getElementById('persuasionCheck') 
+const persuasionCheck = document.getElementById('persuasionCheck')
 persuasionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const religionCheck = document.getElementById('religionCheck')
 religionCheck.addEventListener("change", addProficiencyBonusToSkills)

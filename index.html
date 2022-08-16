@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dnd</title>
-    <link rel="stylesheet" href='charlist.css' </head>
+    <link rel="stylesheet" href='charlist.css'>
+</head>
 
 <body>
+<div class="global">
     <div class="char">
         <div class="char_name">
             <input type="text" id="name" name="charName">
@@ -21,8 +23,9 @@
                     <select id="class" name="class">
                         <option></option>
                         <option>Воин</option>
-                        <option>Волшебник</option </select>
-                        <input type="number" name="lvl" id="lvl">
+                        <option>Волшебник</option>
+                    </select>
+                    <input type="number" name="lvl" id="lvl">
                 </div>
 
                 <p class="name_bar">Клас и уровень</p>
@@ -60,7 +63,7 @@
                     </label>
 
                     <div class="property_item-stat">
-                        <input type="number"  oninput="maxLengthCheck(this)" maxLength="2"  id="strength" name="strength">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="strength" name="strength">
                     </div>
                     <div class="property_item-mod" id="strengthMod"></div>
                 </div>
@@ -71,7 +74,8 @@
                     </label>
 
                     <div class="property_item-stat">
-                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="dexterity" name="dexterity">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="dexterity"
+                               name="dexterity">
                     </div>
                     <div class="property_item-mod" id="dexterityMod"></div>
                 </div>
@@ -81,7 +85,8 @@
                         <img src="imgs/constitution.png" alt="constitution">
                     </label>
                     <div class="property_item-stat">
-                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="constitution" name="constitution">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="constitution"
+                               name="constitution">
                     </div>
                     <div class="property_item-mod" id="constitutionMod"></div>
                 </div>
@@ -92,7 +97,8 @@
                     </label>
 
                     <div class="property_item-stat">
-                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="intelligence" name="intelligence">
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="2" id="intelligence"
+                               name="intelligence">
                     </div>
                     <div class="property_item-mod" id="intelligenceMod"></div>
                 </div>
@@ -132,7 +138,7 @@
                 <p class="name_bar">Спасброски</p>
                 <ol class="st-items">
                     <li class="st-item">
-                        <input type="checkbox"  id="strengthCheck" class="st_input" name="strengthThrow">
+                        <input type="checkbox" id="strengthCheck" class="st_input" name="strengthThrow">
                         <p class="st-item_name">Сила</p>
                         <span class="span"></span>
                         <p class="st-item_mod" id="strengthSave">0</p>
@@ -147,7 +153,7 @@
                         <input type="checkbox" name="constitutionThrow" id="constitutionCheck" class="st_input">
                         <p class="st-item_name">Телосложение</p>
                         <span class="span"></span>
-                        <p  class="st-item_mod" id="constitutionSave">0</p>
+                        <p class="st-item_mod" id="constitutionSave">0</p>
 
                     </li>
                     <li class="st-item">
@@ -178,7 +184,7 @@
                         <p class="skill_name">Акробатика</p>
                         <p class="skill_mod">(Лов)</p>
                         <span class="span"></span>
-                        <p class="skill_index" name=""  id="acrobaticsMod">0</p>
+                        <p class="skill_index" name="" id="acrobaticsMod">0</p>
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="athletics" id="athleticsCheck">
@@ -193,7 +199,7 @@
                         <p class="skill_mod">(Мдр)</p>
                         <span class="span"></span>
                         <p class="skill_index" id="perceptionMod">0</p>
-                        
+
                     </li>
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="survival" id="survivalCheck">
@@ -265,7 +271,7 @@
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="nature" id="natureCheck">
                         <p class="skill_name">Природа</p>
-                        <p class="skill_mod">(Инт)</p> 
+                        <p class="skill_mod">(Инт)</p>
                         <span class="span"></span>
                         <p class="skill_index" id="natureMod">0</p>
                     </li>
@@ -286,7 +292,7 @@
                     <li class="skill-item">
                         <input class="skill_input" type="checkbox" name="religion" id="religionCheck">
                         <p class="skill_name">Религия</p>
-                        <p class="skill_mod">(Инт)</p> 
+                        <p class="skill_mod">(Инт)</p>
                         <span class="span"></span>
                         <p class="skill_index" id="religionMod">0</p>
 
@@ -328,19 +334,19 @@
                 <label class="name_bar" for="maxHealth">Максимальное здоровье</label>
                 <input type="number" id="maxHealth">
                 <input type="number" id="currHealth">
-                <label class="name_bar" for="currHealth">Здоровье</p>
+                <label class="name_bar" for="currHealth">Здоровье</label>
 
             </div>
             <div class="temporary_heaths">
                 <input type="number" id="tempHealth">
-                <label class="name_bar" for="tempHealth">Временное здоровье</p>
+                <label class="name_bar" for="tempHealth">Временное здоровье</label>
 
             </div>
             <div class="hit_dice">
-                <label  for="diceCount">Количество</label>
+                <label for="diceCount">Количество</label>
                 <input type="number" max="10" id="diceCount">
                 <input type="number" id="diceNumber"><span> d </span><input type="number" id="diceNumber">
-                <p class="name_bar">Кость здоровья</span>
+                <p class="name_bar">Кость здоровья</p>
 
             </div>
             <div class="death_saves">
@@ -372,7 +378,7 @@
         <div class="information_about_char">
             <div class="about_char-items">
                 <div class="about_char-item">
-                    <textarea   name="" id="" cols="40" rows="6"></textarea>
+                    <textarea name="" id="" cols="40" rows="6"></textarea>
                     <p class="name_bar">Черты характера</p>
                 </div>
                 <div class="about_char-item">
@@ -394,21 +400,21 @@
             <div class="attacks">
                 <div class="attacks_names">
                     <label class="attacks_name" for="">Имя</label>
-                <input  class="attacks_name" type="text">
-                <input class="attacks_name" type="text">
-                <input class="attacks_name" type="text">
+                    <input class="attacks_name" type="text">
+                    <input class="attacks_name" type="text">
+                    <input class="attacks_name" type="text">
                 </div>
                 <div class="attacks_bonuses">
-                     <label class="attacks_bonuses" for="">Бонус атаки</label>
+                    <label class="attacks_bonuses" for="">Бонус атаки</label>
                     <input class="attacks_bonus" type="text">
                     <input class="attacks_bonus" type="text">
                     <input class="attacks_bonus" type="text"></div>
-               <div class="attacks_damage">
-                <label class="attacks_damage"   for="">Урон/Вид</label>          
-                <input class="attack_damage" type="text">
-                <input class="attack_damage" type="text">
-                <input class="attack_damage" type="text"></div>
-                
+                <div class="attacks_damage">
+                    <label class="attacks_damage" for="">Урон/Вид</label>
+                    <input class="attack_damage" type="text">
+                    <input class="attack_damage" type="text">
+                    <input class="attack_damage" type="text"></div>
+
             </div>
             <div class="spells">
                 <textarea name="" id="" cols="30" rows="10"></textarea>
@@ -431,9 +437,10 @@
         </div>
 
 
-
     </div>
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
