@@ -12,7 +12,7 @@
 20 -> 5 
 */
 function calcAbilityModifier(num) {
-  return Math.floor((num - 10) / 2)
+    return Math.floor((num - 10) / 2)
 }
 
 /* 
@@ -23,52 +23,50 @@ function calcAbilityModifier(num) {
 17-20 -> 6
 */
 function calcProficiencyBonus(num) {
-  return Math.floor((num - 5) / 2)
+    return Math.floor((num - 5) / 2)
 }
 
 const level = 11
 
 const stats = {
-  strength: 8,
-  dexterity: 10,
-  constitution: 10,
-  intelligence: 18,
-  wisdom: 18,
-  charisma: 12,
+    strength: 8,
+    dexterity: 10,
+    constitution: 10,
+    intelligence: 18,
+    wisdom: 18,
+    charisma: 12,
 }
 
 const skills = {
-  acrobatics: {ability: 'dexterity'},
-  animalHandling: {ability: 'wisdom'},
-  arcana: {ability: 'intelligence'},
-  athletics: {ability: 'strength'},
-  deception: {ability: 'charisma'},
-  history: {ability: 'intelligence'},
-  insight: {ability: 'wisdom'},
-  intimidation: {ability: 'charisma'},
-  investigation: {ability: 'intelligence'},
-  medicine: {ability: 'wisdom'},
-  nature: {ability: 'intelligence'},
-  perception: {ability: 'wisdom'},
-  performance: {ability: 'charisma'},
-  persuasion: {ability: 'charisma'},
-  religion: {ability: 'intelligence'},
-  sleightOfHand: {ability: 'dexterity'},
-  stealth: {ability: 'dexterity'},
-  survival: {ability: 'wisdom'},
+    acrobatics: {ability: 'dexterity'},
+    animalHandling: {ability: 'wisdom'},
+    arcana: {ability: 'intelligence'},
+    athletics: {ability: 'strength'},
+    deception: {ability: 'charisma'},
+    history: {ability: 'intelligence'},
+    insight: {ability: 'wisdom'},
+    intimidation: {ability: 'charisma'},
+    investigation: {ability: 'intelligence'},
+    medicine: {ability: 'wisdom'},
+    nature: {ability: 'intelligence'},
+    perception: {ability: 'wisdom'},
+    performance: {ability: 'charisma'},
+    persuasion: {ability: 'charisma'},
+    religion: {ability: 'intelligence'},
+    sleightOfHand: {ability: 'dexterity'},
+    stealth: {ability: 'dexterity'},
+    survival: {ability: 'wisdom'},
 }
 
 const trainedSkills = ['animalHandling', 'athletics', 'insight', 'perception', 'stealth']
 
 function updateSkillValues() {
-  for (const skill in skills) {
-    const ability = skills[skill].ability
-    const abilityModifier = calcAbilityModifier(stats[ability])
-    const proficiencyBonus = calcProficiencyBonus(level)
-    const skillValue = abilityModifier + proficiencyBonus
-    
-    skills[skill].value = skillValue
-  }
+    for (const skill in skills) {
+        const ability = skills[skill].ability
+        const abilityModifier = calcAbilityModifier(stats[ability])
+        const proficiencyBonus = calcProficiencyBonus(level)
+        skills[skill].value = abilityModifier + proficiencyBonus
+    }
 }
 
 updateSkillValues() 

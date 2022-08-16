@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.global {
+    margin: 3em 0;
+}
+
 .name_bar {
   text-align: center;
   font-size: 20px;
@@ -12,7 +16,6 @@ textarea {
   width: 100%;
   resize: none;
   font-size: 20px;
-  list-style: 5px;
 }
 
 input {
@@ -31,7 +34,7 @@ input {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 30px;
-  padding: 0px 50px;
+  padding: 0 50px;
 }
 
 .char_name {
@@ -54,7 +57,9 @@ input {
   display: -ms-grid;
   display: grid;
   width: 90%;
-  grid-template: "classname background player" auto "race aligment points" auto/ 30% 30% 30%;
+  grid-template: "classname background player" auto
+ "race aligment points" auto/
+ 30% 30% 30%;
   gap: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -120,7 +125,10 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  grid-template: "main points about" auto "atks fet1 fet2" auto "lang fet1  fet2" auto/ 30% 20% 20%;
+  grid-template: "main points about" auto
+ "atks fet1 fet2" auto
+ "lang fet1  fet2" auto/
+ 30% 20% 20%;
   padding: 0 50px;
 }
 
@@ -130,7 +138,11 @@ input {
   display: grid;
   -webkit-column-gap: 20px;
           column-gap: 20px;
-  grid-template: "prop inspiration" auto "prop prof-bonus" auto "prop throws" auto "prop skills " auto/ 25% auto;
+  grid-template: "prop inspiration" auto
+ "prop prof-bonus" auto
+ "prop throws" auto
+ "prop skills " auto/
+ 25% auto;
   min-width: 300px;
 }
 
@@ -151,7 +163,7 @@ input {
 }
 
 .information_main .properties-items .property_item:first-child {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .information_main .properties-items .property_item img {
@@ -184,6 +196,7 @@ input {
 }
 
 .information_main .inspiration {
+    /*дублікат*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,6 +223,7 @@ input {
 
 .information_main .proficiency_bonus {
   margin-top: 10px;
+    /*дублікат*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,6 +260,7 @@ input {
   margin-top: 10px;
 }
 
+/*дублікат*/
 .information_main .saving_throws .st-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,7 +272,6 @@ input {
   padding: 0 10px;
   width: auto;
   margin-top: 5px;
-  list-style-type: none;
 }
 
 .information_main .saving_throws .st-item:last-child {
@@ -269,7 +283,7 @@ input {
 }
 
 .information_main .saving_throws .st-item .span {
-  margin: 0px 3px;
+  margin: 0 3px;
   border-bottom: 1px solid black;
   width: 100%;
 }
@@ -284,6 +298,7 @@ input {
   border-radius: 10px;
 }
 
+/*дублікат*/
 .information_main .skills .skill-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,7 +317,7 @@ input {
 }
 
 .information_main .skills .skill-item .span {
-  margin: 0px 3px;
+  margin: 0 3px;
   border-bottom: 1px solid black;
   width: 100%;
 }
@@ -497,6 +512,7 @@ input {
 }
 
 .information_points .death_saves {
+    /*дублікат*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
