@@ -52,13 +52,29 @@ const character = {
         religion: { mod: '0', modifier: 'intelligenceMod' },
         sleightOfHand: { mod: '0', modifier: 'dexterityMod' },
         stealth: { mod: '0', modifier: 'dexterityMod' },
-        survival: { mod: '0', modifier: 'wisdomMod' },
-        
-
-       
-
+        survival: { mod: '0', modifier: 'wisdomMod' }
     },
-
+    points: {
+        hp: '',
+        maxHp: '',
+        tempHp: '',
+        init: '',
+        speed: '',
+        passivePerception: '',
+        diceCount: '',
+        diceSides: '',
+        armorClass: '',
+        deathSaves: {
+            deathSaveSuccess: '',
+            deathSaveFailure: '',
+            deathSaveSuccess2: '',
+            deathSaveFailure2: '',
+            deathSaveSuccess3: '',
+            deathSaveFailure3: '',
+        },
+        passiveWisdom: '',
+        vision: '',
+    }
 }
 
 
@@ -108,6 +124,7 @@ strength.addEventListener("input", updateSavingThrows)
 const dexterity = document.getElementById('dexterity')
 dexterity.addEventListener("input", updateAbility)
 dexterity.addEventListener("input", updateSavingThrows)
+dexterity.addEventListener("input", calculateArmorClass)
 
 const constitution = document.getElementById('constitution')
 constitution.addEventListener("input", updateAbility)
@@ -135,8 +152,9 @@ function updateAbility(e) {
     }
     writeModifiers()
     updateSkills()
-    
-    
+
+
+
 
 
 
@@ -185,12 +203,12 @@ function calcProficiencyBonus() {
 function updateSavingThrows(e) {
     const name = e.target.name
     character.savingThrows[name + "Throw"] = character.modifiers[name + 'Mod']
-   
+
     writeSavingThrows()
 
 
     console.log(character.savingThrows)
-    
+
 
 }
 
@@ -245,20 +263,20 @@ function writeSavingThrows() {
 
 
 function updateSkills() {
-    
+
     //if skill.acrobatics.modifier name = modifiers name => skill.acrobatics.mod = modifiers.name 
     for (let skill in character.skills) {
         for (let modifier in character.modifiers) {
             if (character.skills[skill].modifier === modifier) {
                 character.skills[skill].mod = character.modifiers[modifier]
             }
-           
-            
-        }   
+
+
+        }
     }
     console.log(character.skills)
     writeSkills()
-    
+
 }
 
 
@@ -267,7 +285,7 @@ function updateSkills() {
 //write skills to hltm Mod
 function writeSkills() {
     for (let skill in character.skills) {
-        if (character.skills[skill].mod === '' ) {
+        if (character.skills[skill].mod === '') {
             character.skills[skill].mod = '0'
         }
     }
@@ -275,7 +293,7 @@ function writeSkills() {
     athletics.innerHTML = character.skills.athletics.mod
     const stealth = document.getElementById('stealthMod')
     stealth.innerHTML = character.skills.stealth.mod
-    survival = document.getElementById('survivalMod')
+    const survival = document.getElementById('survivalMod')
     survival.innerHTML = character.skills.survival.mod
     const acrobatics = document.getElementById('acrobaticsMod')
     acrobatics.innerHTML = character.skills.acrobatics.mod
@@ -307,13 +325,11 @@ function writeSkills() {
     religion.innerHTML = character.skills.religion.mod
     const sleightOfHand = document.getElementById('sleightOfHandMod')
     sleightOfHand.innerHTML = character.skills.sleightOfHand.mod
-    
-    //if mod = '' => write mod = 0 
-    
 
 
 
-    
+
+
 }
 
 //if skill is checked add proficiency bonus to skill
@@ -355,16 +371,43 @@ const medicineCheck = document.getElementById('medicineCheck')
 medicineCheck.addEventListener("change", addProficiencyBonusToSkills)
 const natureCheck = document.getElementById('natureCheck')
 natureCheck.addEventListener("change", addProficiencyBonusToSkills)
-const perceptionCheck = document.getElementById('perceptionCheck') 
+const perceptionCheck = document.getElementById('perceptionCheck')
 perceptionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const performanceCheck = document.getElementById('performanceCheck')
 performanceCheck.addEventListener("change", addProficiencyBonusToSkills)
-const persuasionCheck = document.getElementById('persuasionCheck') 
+const persuasionCheck = document.getElementById('persuasionCheck')
 persuasionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const religionCheck = document.getElementById('religionCheck')
 religionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const sleightOfHandCheck = document.getElementById('sleightOfHandCheck')
 sleightOfHandCheck.addEventListener("change", addProficiencyBonusToSkills)
+
+//armor class = 10 + dext + input value 
+function calculateArmorClass(e) {
+    const dex = character.modifiers.dexterityMod
+    const armorClass = 10 + dex
+    const armorClassInput = document.getElementById('armorClassInput')
+    armorClassInput.value = armorClass
+    //write armorclass to database
+    character.points.armorClass = armorClass
+    // if armorClass.value changed with user write to database
+    //why is returned 2 times?
+    armorClassInput.addEventListener("input", function (e) {
+        if (e.target.value !== armorClass) {
+            character.points.armorClass = e.target.value
+            console.log(character.points.armorClass)
+        }
+
+    }
+
+    )
+    console.log(character.points.armorClass)
+
+
+    
+}
+
+
 
 
 
