@@ -121,7 +121,8 @@
 
             </div>
             <div class="inspiration">
-                <input type="number" id="inspiration" oninput="maxLengthCheck(this)" maxLength="2">
+                <input type="number"
+               name="inspiration" id="inspiration" oninput="maxLengthCheck(this)" maxLength="2">
                 <label class="name_bar" for="inspiration">Вдохновение</label>
             </div>
             <div class="proficiency_bonus">
@@ -310,37 +311,37 @@
         </div>
         <div class="information_points">
             <div class="armor_class">
-                <input type="number" id="armorClassInput">
+                <input type="number" id="armorClassInput"   oninput="maxLengthCheck(this)" maxLength="3">
                 <p class="name_bar">Класс доспеха</p>
 
             </div>
             <div class="initiative">
-                <input type="number">
+                <input type="number" id="initiativeInput" name="init" oninput="maxLengthCheck(this)" maxLength="2" >
                 <p class="name_bar">Инициатива</p>
 
             </div>
             <div class="speed">
-                <input type="number">
+                <input type="number" id="speedInput" name="speed" oninput="maxLengthCheck(this)" maxLength="3">
                 <p class="name_bar">Скорость</p>
 
             </div>
             <div class="current_health">
                 <label class="name_bar" for="maxHealth">Максимальное здоровье</label>
-                <input type="number" id="maxHealth">
-                <input type="number" id="currHealth">
+                <input type="number" id="maxHealth" name="maxHp" oninput="maxLengthCheck(this)" maxLength="3">
+                <input type="number" id="currHealth" name="hp" oninput="maxLengthCheck(this)" maxLength="3">
                 <label class="name_bar" for="currHealth">Здоровье</p>
 
             </div>
             <div class="temporary_heaths">
-                <input type="number" id="tempHealth">
+                <input type="number" id="tempHealth" name="tempHP" oninput="maxLengthCheck(this)" maxLength="3" >
                 <label class="name_bar" for="tempHealth">Временное здоровье</p>
 
             </div>
             <div class="hit_dice">
                 <label  for="diceCount">Количество</label>
-                <input type="number" max="10" id="diceCount">
+                <input type="number" id="diceCountInput" name="diceCount" oninput="maxLengthCheck(this)" maxLength="3">
                 <input type="number" id="diceNumber"><span> d </span><input type="number" id="diceNumber">
-                <p class="name_bar">Кость здоровья</span>
+                <label for='diceNumber' class="name_bar">Кость здоровья</span>
 
             </div>
             <div class="death_saves">
@@ -360,12 +361,12 @@
                 <p class="name_bar">Броски смерти</p>
             </div>
             <div class="perception">
-                <input type="text">
-                <p class="name_bar">Внимательность</p>
+                <input type="number" id="perceptionInput" name="passivePerception" oninput="maxLengthCheck(this)" maxLength="3">
+                <label for="perceptionInput" class="name_bar">Внимательность</p>
             </div>
             <div class="vision">
-                <input type="text">
-                <p class="name_bar">Зрение</p>
+                <input type="number" id="visionInput" name="vision" oninput="maxLengthCheck(this)" maxLength="3">
+                <label for="visionInput" class="name_bar">Зрение</p>
             </div>
 
         </div>

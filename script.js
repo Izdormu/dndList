@@ -9,6 +9,7 @@ const character = {
         charNature: '',
         exp: '',
         proficiencyBonus: 2,
+        inspiration: ''
     },
     abilities: {
         strength: '',
@@ -76,6 +77,45 @@ const character = {
         vision: '',
     }
 }
+//write values what we have in local storage to input values
+function displayLocal() {
+    const inputs = document.querySelectorAll('input')
+    inputs.forEach(input => { 
+        if (localStorage.getItem(input.name) != '') {
+            input.value = localStorage.getItem(input.name)
+        }
+    })
+    const textareas = document.querySelectorAll('textarea')
+    textareas.forEach(textarea => {
+        if (localStorage.getItem(textarea.name) != '') {
+            textarea.value = localStorage.getItem(textarea.name)
+        }
+    })
+    localStorage.getItem('class') != '' ? document.getElementById('class').value = localStorage.getItem('class') : ''
+
+    //write modifiers
+    const strengthMod = document.getElementById('strengthMod')
+    const dexterityMod = document.getElementById('dexterityMod')
+    const constitutionMod = document.getElementById('constitutionMod')
+    const intelligenceMod = document.getElementById('intelligenceMod')
+    const wisdomMod = document.getElementById('wisdomMod')
+    const charismaMod = document.getElementById('charismaMod')
+    strengthMod.textContent = localStorage.getItem('strengthMod')
+    dexterityMod.textContent = localStorage.getItem('dexterityMod')
+    constitutionMod.textContent = localStorage.getItem('constitutionMod')
+    intelligenceMod.textContent = localStorage.getItem('intelligenceMod')
+    wisdomMod.textContent = localStorage.getItem('wisdomMod')
+    charismaMod.textContent = localStorage.getItem('charismaMod')
+}
+
+
+
+    displayLocal()
+
+//if we have name in local === name in character object write it in character object
+
+
+console.log(character)
 
 
 // maxlengtn for input type number
@@ -85,29 +125,38 @@ function maxLengthCheck(object) {
 }
 
 const heroName = document.getElementById('name')
-heroName.addEventListener("input", updateValue)
+heroName.addEventListener("blur", updateValue)
+heroName.addEventListener("blur", saveLocal)
 
 const select = document.getElementById('class')
-select.addEventListener("change", updateValue)
+select.addEventListener("blur", updateValue)
+select.addEventListener("blur", saveLocal)
 
 const personName = document.getElementById('personName')
-personName.addEventListener("input", updateValue)
+personName.addEventListener("blur", updateValue)
+personName.addEventListener("blur", saveLocal)
 
 const lvl = document.getElementById('lvl')
-lvl.addEventListener("input", updateValue, calcProficiencyBonus)
+lvl.addEventListener("blur", updateValue, calcProficiencyBonus)
+lvl.addEventListener("blur", saveLocal)
 lvl.addEventListener("input", calcProficiencyBonus)
+lvl.addEventListener("change", calcProficiencyBonus)
 
 const charHistory = document.getElementById('charHistory')
-charHistory.addEventListener("input", updateValue)
+charHistory.addEventListener("blur", updateValue)
+charHistory.addEventListener("blur", saveLocal)
 
 const race = document.getElementById('race')
-race.addEventListener("input", updateValue)
+race.addEventListener("blur", updateValue)
+race.addEventListener("blur", saveLocal)
 
 const charNature = document.getElementById('charNature')
-charNature.addEventListener("input", updateValue)
+charNature.addEventListener("blur", updateValue)
+charNature.addEventListener("blur", saveLocal)
 
 const exp = document.getElementById('exp')
-exp.addEventListener("input", updateValue)
+exp.addEventListener("blur", updateValue)
+exp.addEventListener("blur", saveLocal)
 
 // update information in about section
 function updateValue(e, name) {
@@ -116,30 +165,57 @@ function updateValue(e, name) {
     console.log(character.about)
 
 }
+//save value in local storage
+function saveLocal(e,name) {
+    name = e.target.name
+    const value = e.target.value
+    localStorage.setItem(name, value)
+    console.log(localStorage)
+    //save modidiers in local storage
+    if (name == 'strength' || name == 'dexterity' || name == 'constitution' || name == 'intelligence' || name == 'wisdom' || name == 'charisma' && value != '') {
+        const mod = document.getElementById(name + 'Mod')
+        localStorage.setItem(name + 'Mod', mod.textContent)
+    }
+      
+    
+    
+    
+}
+
+const inspiration = document.getElementById('inspiration')
+inspiration.addEventListener("blur", updateValue)
+inspiration.addEventListener("blur", saveLocal)
+
 //update ability in abilities section
 const strength = document.getElementById('strength')
 strength.addEventListener("input", updateAbility)
+strength.addEventListener("blur", saveLocal)
 strength.addEventListener("input", updateSavingThrows)
 
 const dexterity = document.getElementById('dexterity')
 dexterity.addEventListener("input", updateAbility)
+dexterity.addEventListener("blur", saveLocal)
 dexterity.addEventListener("input", updateSavingThrows)
 dexterity.addEventListener("input", calculateArmorClass)
 
 const constitution = document.getElementById('constitution')
 constitution.addEventListener("input", updateAbility)
+constitution.addEventListener("blur", saveLocal)
 constitution.addEventListener("input", updateSavingThrows)
 
 const intelligence = document.getElementById('intelligence')
 intelligence.addEventListener("input", updateAbility)
+intelligence.addEventListener("blur", saveLocal)
 intelligence.addEventListener("input", updateSavingThrows)
 
 const wisdom = document.getElementById('wisdom')
 wisdom.addEventListener("input", updateAbility)
+wisdom.addEventListener("blur", saveLocal)
 wisdom.addEventListener("input", updateSavingThrows)
 
 const charisma = document.getElementById('charisma')
 charisma.addEventListener("input", updateAbility)
+charisma.addEventListener("blur", saveLocal)
 charisma.addEventListener("input", updateSavingThrows)
 
 //update stats in abilities section
@@ -150,7 +226,7 @@ function updateAbility(e) {
     if (character.abilities[name] === '') {
         character.modifiers[name + 'Mod'] = ''
     }
-    writeModifiers()
+    writeModifiers(name + 'Mod')
     updateSkills()
 
 
@@ -160,27 +236,17 @@ function updateAbility(e) {
 
     console.log(character)
 }
-//calculate ability modifier
 function calcAbilityModifier(num) {
-    return Math.floor((num - 10) / 2)
+//calculate ability modifier
+    return Math.floor((+num - 10) / 2)
 }
 //update stats in modifiers section
-function writeModifiers() {
-    const strengthMod = document.getElementById('strengthMod')
-    strengthMod.innerHTML = character.modifiers.strengthMod
-    const dexterityMod = document.getElementById('dexterityMod')
-    dexterityMod.innerHTML = character.modifiers.dexterityMod
-    const constitutionMod = document.getElementById('constitutionMod')
-    constitutionMod.innerHTML = character.modifiers.constitutionMod
-    const intelligenceMod = document.getElementById('intelligenceMod')
-    intelligenceMod.innerHTML = character.modifiers.intelligenceMod
-    const wisdomMod = document.getElementById('wisdomMod')
-    wisdomMod.innerHTML = character.modifiers.wisdomMod
-    const charismaMod = document.getElementById('charismaMod')
-    charismaMod.innerHTML = character.modifiers.charismaMod
-
+function writeModifiers(name) {
+    const mod = document.getElementById(name)
+    mod.innerHTML = character.modifiers[name]
+    
 }
-
+//save modifiers in local storage
 //calculate proficiency bonus
 function calcProficiencyBonus() {
     const proficiencyBonus = document.getElementById('proficiencyBonus')
@@ -382,6 +448,8 @@ religionCheck.addEventListener("change", addProficiencyBonusToSkills)
 const sleightOfHandCheck = document.getElementById('sleightOfHandCheck')
 sleightOfHandCheck.addEventListener("change", addProficiencyBonusToSkills)
 
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //armor class = 10 + dext + input value 
 function calculateArmorClass(e) {
     const dex = character.modifiers.dexterityMod
@@ -401,24 +469,44 @@ function calculateArmorClass(e) {
     }
 
     )
-    console.log(character.points.armorClass)
-
-
     
 }
+calculateArmorClass()
+
+function updatePoints(e,name) {
+    const value = e.target.value
+    character.points[name] = value
+    console.log(character.points[name])
+}
+
+const speed = document.getElementById('speedInput')
+speed.addEventListener("input", updatePoints)
 
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const initiative = document.getElementById('initiativeInput')
+initiative.addEventListener("input", updatePoints)
+
+const currHealth = document.getElementById('currHealth')
+currHealth.addEventListener("input", updatePoints)
+
+const maxHealth = document.getElementById('maxHealth')
+maxHealth.addEventListener("input", updatePoints)
+
+const tempHealth = document.getElementById('tempHealth')
+tempHealth.addEventListener("input", updatePoints)
+
+const passiveperception = document.getElementById('perceptionInput')
+passiveperception.addEventListener("input", updatePoints)
+
+const vision = document.getElementById('visionInput')
+vision.addEventListener("input", updatePoints)
+
+const diceCount = document.getElementById('diceCountInput')
+diceCount.addEventListener("input", updatePoints)
 
 
-
-
-
-
-
-
-
-
-
+//when diceNumber1 and diceNumber2 = number -> diceSides = diceNumber1 + "d" + diceNumber2
 
 
 
